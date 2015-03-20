@@ -1,7 +1,7 @@
 package io.pivotal.timetracking.web;
 
-import io.pivotal.timetracking.domain.Reply;
-import io.pivotal.timetracking.repository.ReplyRepository;
+import io.pivotal.timetracking.domain.TimeEntry;
+import io.pivotal.timetracking.repository.TimeEntryRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReplyController {
 	
 	@Autowired
-	protected ReplyRepository replyRepository;
+	protected TimeEntryRepository replyRepository;
 	
 	private static final Log log = LogFactory.getLog(ReplyController.class);
 
@@ -40,7 +40,7 @@ public class ReplyController {
 		log.debug(String.format(
 				"Processing generate reply request with %d replies.", numberOfReplies));
 		ReplyResponse response = new ReplyResponse();
-		Iterable<Reply> allReplies = replyRepository.findAll();
+		Iterable<TimeEntry> allReplies = replyRepository.findAll();
 		List<String> prunedReplies = this.pruneReplies(allReplies, numberOfReplies);
 		response.setReplies(prunedReplies);
 		return response;
@@ -53,19 +53,19 @@ public class ReplyController {
 	 * @param numberOfReplies The number of replies to prune to.
 	 * @return A pruned list of reply descriptions.
 	 */
-	private List<String> pruneReplies(Iterable<Reply> allReplies, Integer numberOfReplies) {
+	private List<String> pruneReplies(Iterable<TimeEntry> allReplies, Integer numberOfReplies) {
 
-		List<Reply> allRepliesList = new ArrayList<Reply>();
-		for (Reply reply : allReplies) {
+		List<TimeEntry> allRepliesList = new ArrayList<TimeEntry>();
+		for (TimeEntry reply : allReplies) {
 			allRepliesList.add(reply);
 		}
 		
 		List<String> prunedReplies = new ArrayList<String>();
 		Random random = new Random();
 		for (int i = 0; i < numberOfReplies; i++) {
-			Reply reply = allRepliesList.get(random.nextInt(allRepliesList.size()));
+			TimeEntry reply = allRepliesList.get(random.nextInt(allRepliesList.size()));
 			log.debug(String.format("Randomly selected reply: [%s].", reply));
-			prunedReplies.add(reply.getReplyDescription());
+			prunedReplies.add(reply.getAccountName());
 		}
 
 		return prunedReplies;		
