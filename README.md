@@ -4,7 +4,7 @@ Readme for Random Reply - Spring Boot
 ##Description
 This is a Spring Boot application to demonstrate basic Spring web app attributes.  The goal of this application is to demonstrate several Spring and Spring Boot features:
 
-* 5 classes to create a data-driven REST service (including 2 pojo data objects and a main method class)
+* 5 classes to create a data-driven web application (including 2 pojo data objects and a main method class)
 * Autoconfiguration for Spring Boot applications
 * Spring Boot starter packs for JPA and REST services
 * Spring test fixtures
@@ -21,7 +21,7 @@ To run the application standalone:
 
 which starts an embedded Tomcat server listening on port 8080.
 
-Open [http://localhost:8080/](http://localhost:8080/) in a browse
+Open [http://localhost:8080/](http://localhost:8080/) in a browser.
 
 
 ##Actuator
