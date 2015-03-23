@@ -1,6 +1,10 @@
 package io.pivotal.timetracking.web.integration;
 
+import java.sql.Date;
+import java.util.Calendar;
+
 import io.pivotal.timetracking.Application;
+import io.pivotal.timetracking.domain.TimeEntry;
 import junit.framework.TestCase;
 
 import org.apache.commons.logging.Log;
@@ -58,13 +62,51 @@ public class TimeEntryControllerTests {
 	 * and asserting that results are returned.
 	 */
 	@Test
-	public void testEntryList() {
+	public void testListEntries() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.get("/entries/all"))
+					MockMvcRequestBuilders.get("/entries/"))
+					.andExpect(MockMvcResultMatchers.status().isOk())
 					.andExpect(MockMvcResultMatchers.model().attributeExists(
 							"timeEntries"))
-					.andExpect(MockMvcResultMatchers.view().name("entries/list"))
+					.andExpect(MockMvcResultMatchers.view().name("/entries/list"));
+		} catch (Exception e) {
+			log.error(e);
+			TestCase.fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Tests the get entry by id method of the controller.
+	 */
+	@Test
+	public void testGetEntry() {
+		try {
+			this.mvc.perform(
+					MockMvcRequestBuilders.get("/entries/1"))
+					.andExpect(MockMvcResultMatchers.status().isOk())
+					.andExpect(MockMvcResultMatchers.model().attributeExists(
+							"timeEntry"))
+					.andExpect(MockMvcResultMatchers.view().name("/entry/view"));
+		} catch (Exception e) {
+			log.error(e);
+			TestCase.fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * Tests the save time entry method of the controller.
+	 */
+	@Test
+	public void testSaveEntry() {
+		TimeEntry timeEntry = new TimeEntry(
+				"Test FE",
+				"Test account",
+				new Date(Calendar.getInstance().getTimeInMillis()),
+				1.5d);
+		try {
+			this.mvc.perform(
+					MockMvcRequestBuilders.post("/entries/save", timeEntry))
 					.andExpect(MockMvcResultMatchers.status().isOk());
 		} catch (Exception e) {
 			log.error(e);
