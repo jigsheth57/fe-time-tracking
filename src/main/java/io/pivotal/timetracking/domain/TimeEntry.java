@@ -144,7 +144,7 @@ public class TimeEntry {
 	@Override
 	public String toString() {
 		return String.format(
-				"TimeEntry = [timeEntryId: %d, feName: '%s', accountName: '%s', date: '%tm %te, %tY', hours: %f]",
+				"TimeEntry = [timeEntryId: %d, feName: '%s', accountName: '%s', date: '%tB %te, %tY', hours: %f]",
 				timeEntryId, 
 				feName, 
 				accountName,
