@@ -137,7 +137,7 @@ public class TimeEntry {
 
 	/**
 	 * Overrides Object's toString method to return the
-	 * state of the Reply object.
+	 * state of the TimeEntry object.
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
