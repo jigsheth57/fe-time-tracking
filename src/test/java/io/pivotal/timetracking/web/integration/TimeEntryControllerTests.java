@@ -1,14 +1,16 @@
 package io.pivotal.timetracking.web.integration;
 
+import io.pivotal.timetracking.Application;
+import io.pivotal.timetracking.domain.TimeEntry;
+
 import java.sql.Date;
 import java.util.Calendar;
 
-import io.pivotal.timetracking.Application;
-import io.pivotal.timetracking.domain.TimeEntry;
 import junit.framework.TestCase;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,8 +22,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 /**
@@ -58,18 +63,15 @@ public class TimeEntryControllerTests {
 	}
 
 	/**
-	 * Tests the entry list method by getting the entry list
-	 * and asserting that results are returned.
+	 * Tests the get all entries method of the controller.
 	 */
 	@Test
-	public void testListEntries() {
+	public void testGetAllEntries() {
 		try {
 			this.mvc.perform(
 					MockMvcRequestBuilders.get("/entries/"))
 					.andExpect(MockMvcResultMatchers.status().isOk())
-					.andExpect(MockMvcResultMatchers.model().attributeExists(
-							"timeEntries"))
-					.andExpect(MockMvcResultMatchers.view().name("/entries/list"));
+					.andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
 		} catch (Exception e) {
 			log.error(e);
 			TestCase.fail(e.getMessage());
@@ -80,14 +82,13 @@ public class TimeEntryControllerTests {
 	 * Tests the get entry by id method of the controller.
 	 */
 	@Test
-	public void testGetEntry() {
+	public void testGetEntryById() {
 		try {
 			this.mvc.perform(
 					MockMvcRequestBuilders.get("/entries/1"))
 					.andExpect(MockMvcResultMatchers.status().isOk())
-					.andExpect(MockMvcResultMatchers.model().attributeExists(
-							"timeEntry"))
-					.andExpect(MockMvcResultMatchers.view().name("/entry/view"));
+					.andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
+					.andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasEntry("accountName", "Sample account 1")));
 		} catch (Exception e) {
 			log.error(e);
 			TestCase.fail(e.getMessage());
@@ -99,15 +100,20 @@ public class TimeEntryControllerTests {
 	 */
 	@Test
 	public void testSaveEntry() {
-		TimeEntry timeEntry = new TimeEntry(
-				"Test FE",
-				"Test account",
-				new Date(Calendar.getInstance().getTimeInMillis()),
+		TimeEntry entry = new TimeEntry(
+				"Test FE", 
+				"Test Account", 
+				new Date(Calendar.getInstance().getTimeInMillis()), 
 				1.5d);
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.post("/entries/save", timeEntry))
-					.andExpect(MockMvcResultMatchers.status().isOk());
+					MockMvcRequestBuilders.post("/entries/save")
+					.contentType("application/json")
+					.content(new ObjectMapper().writeValueAsString(entry))
+			)
+			.andDo(MockMvcResultHandlers.print())
+			.andExpect(MockMvcResultMatchers.status().isOk())
+			.andExpect(MockMvcResultMatchers.jsonPath("$.timeEntryId").exists());
 		} catch (Exception e) {
 			log.error(e);
 			TestCase.fail(e.getMessage());

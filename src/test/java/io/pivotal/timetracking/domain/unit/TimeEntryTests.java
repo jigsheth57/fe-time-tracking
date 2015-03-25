@@ -20,7 +20,7 @@ public class TimeEntryTests {
 	
 	private TimeEntry timeEntry;
 	
-	private static final String TIME_ENTRY_TO_STRING_PATTERN = "TimeEntry = [ID: %d, FE Name: '%s', Account Name: '%s', Date: '%tm %te, %tY', Hours: %f]";
+	private static final String TIME_ENTRY_TO_STRING_PATTERN = "TimeEntry = [timeEntryId: %d, feName: '%s', accountName: '%s', date: '%tB %te, %tY', hours: %f]";
 	
 	/**
 	 * Builds the TimeEntry object to test

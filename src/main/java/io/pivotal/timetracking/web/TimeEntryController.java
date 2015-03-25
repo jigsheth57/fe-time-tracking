@@ -3,22 +3,26 @@ package io.pivotal.timetracking.web;
 import io.pivotal.timetracking.domain.TimeEntry;
 import io.pivotal.timetracking.repository.TimeEntryRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The controller for working with <code>TimeEntry</code> resources.
+ * The REST controller for working with <code>TimeEntry</code> resources.
  * 
  * @author Brian Jimerson
  *
  */
-@Controller
+@RestController
 @RequestMapping(value="/entries")
 public class TimeEntryController {
 	
@@ -29,34 +33,46 @@ public class TimeEntryController {
 	
 	/**
 	 * Gets all of the time entries.
-	 * @param model The model to use for this controller method.
-	 * @return The path to the desired view.
+	 * @return A list of all of the time entries.
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String getAllTimeEntries(Model model) {
+	public @ResponseBody List<TimeEntry> getAllTimeEntries() {
 		
 		Iterable<TimeEntry> timeEntries = timeEntryRepository.findAll();
 		log.debug(String.format("All time entries fetched: [%s]", timeEntries));
-		
-		model.addAttribute("timeEntries", timeEntries);
-		return "/entries/list";
+		ArrayList<TimeEntry> timeEntryList = new ArrayList<TimeEntry>();
+		for (TimeEntry te : timeEntries) {
+			timeEntryList.add(te);
+		}
+		return timeEntryList;
 	}
 	
 	/**
 	 * Gets a particular time entry by it's id.
 	 * @param timeEntryId The id of the time entry to get.
-	 * @param model The model to use for this controller method.
-	 * @return The path to the desired view.
+	 * @return The time entry requested.
 	 */
 	@RequestMapping(value="/{timeEntryId}", method=RequestMethod.GET)
-	public String getTimeEntry(@PathVariable Long timeEntryId, Model model) {
+	public @ResponseBody TimeEntry getTimeEntry(@PathVariable Long timeEntryId) {
 		
 		TimeEntry timeEntry = timeEntryRepository.findOne(timeEntryId);
 		log.debug(String.format("Found time entry for id %d: [%s]",
 				timeEntryId, timeEntry));
+		return timeEntry;
 		
-		model.addAttribute("timeEntry", timeEntry);
-		return "/entry/view";
+	}
+	
+	/**
+	 * Saves a time entry
+	 * @param timeEntry The time entry to save.
+	 * @return The time entry saved, with any additional data from the save.
+	 */
+	@RequestMapping(value="/save", method=RequestMethod.POST)
+	public @ResponseBody TimeEntry saveTimeEntry(@RequestBody TimeEntry timeEntry) {
+		
+		TimeEntry savedEntry = timeEntryRepository.save(timeEntry);
+		log.debug(String.format("Saved time entry: [%s]", savedEntry));
+		return savedEntry;
 		
 	}
 	
