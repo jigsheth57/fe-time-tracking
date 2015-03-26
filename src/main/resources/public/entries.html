@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="timeEntryApp">
+	<head>
+		<title>Time Entries</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="js/controllers.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="EntryListController">
+			<table>
+				<thead>
+					<tr>
+						<th>FE Name</th>
+						<th>Account Name</th>
+						<th>Date</th>
+						<th>Hours</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="entry in entries">
+						<td><a href="entryDetail.html?id={{entry.timeEntryId}}">{{entry.feName}}</a></td>
+						<td>{{entry.accountName}}</td>
+						<td>{{entry.date}}</td>
+						<td>{{entry.hours}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

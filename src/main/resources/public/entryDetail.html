@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="timeEntryApp">
+	<head>
+		<title>Time Entry Detail</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="js/controllers.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="EntryDetailController">
+			FE Name: {{entry.feName}}
+			Account Name: {{entry.accountName}}
+			Date: {{entry.date}}
+			Hours: {{entry.hours}}
+		</div>
+	</body>
+</html>
