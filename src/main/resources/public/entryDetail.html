@@ -10,20 +10,26 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<h2>Time Entry Details</h2>
+		<div ng-controller="EntryDetailController">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<h2>Time Entry Details</h2>
+						<hr/>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-10">
 					<!-- Display the time entry detail received -->
-					<div ng-controller="EntryDetailController">
+						<p>ID: {{entry.timeEntryId}}</p>
 						<p>FE Name: {{entry.feName}}</p>
 						<p>Account Name: {{entry.accountName}}</p>
 						<p>Date: {{entry.date}}</p>
 						<p>Hours: {{entry.hours}}</p>
+						<div class="well">
+							<a href="/entries.html" target="_self" class="btn btn-primary">Back</a>
+							<a href="/editEntry.html?id={{entry.timeEntryId}}" target="_self" class="btn btn-info">Edit</a>
+						</div>
 					</div>
 				</div>
 			</div>
