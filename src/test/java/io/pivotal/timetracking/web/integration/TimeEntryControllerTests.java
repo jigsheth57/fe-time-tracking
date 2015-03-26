@@ -129,9 +129,6 @@ public class TimeEntryControllerTests {
 			this.mvc.perform(
 					MockMvcRequestBuilders.delete("/entries/delete/1"))
 					.andExpect(MockMvcResultMatchers.status().isOk());
-			this.mvc.perform(
-					MockMvcRequestBuilders.get("/entries/1"))
-					.andExpect(MockMvcResultMatchers.jsonPath("$.timeEntryId").doesNotExist());
 					
 		} catch (Exception e) {
 			log.error(e);
