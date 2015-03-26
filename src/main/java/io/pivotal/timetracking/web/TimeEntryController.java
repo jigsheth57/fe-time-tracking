@@ -76,5 +76,16 @@ public class TimeEntryController {
 		
 	}
 	
+	/**
+	 * Deletes a time entry.
+	 * @param timeEntryId The id of the time entry to delete.
+	 */
+	@RequestMapping(value="/delete/{timeEntryId}", method=RequestMethod.DELETE)
+	public void deleteTimeEntry(@PathVariable Long timeEntryId) {
+		
+		log.debug(String.format("Deleting time entry for id %d.", timeEntryId));
+		timeEntryRepository.delete(timeEntryId);
+	}
+	
 
 }

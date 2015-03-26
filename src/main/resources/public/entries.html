@@ -7,8 +7,8 @@
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     	<script src="js/bootstrap.js"></script>
     	<link rel="stylesheet" href="css/bootstrap.css" />
+    	<link rel="stylesheet" href="css/bootstrap-theme.css"/>
 	</head>
-
 	<body>
 		<div ng-controller="EntryListController">
 			<div class="container">
@@ -16,6 +16,16 @@
 					<div class="col-md-10">
 						<h2>All Time Entries</h2>
 						<hr/>
+					</div>
+				</div>
+				<div class="row" ng-show="message">
+					<div class="col-md-10">
+						<div class="alert alert-info" role="alert">{{message}}</div>
+					</div>
+				</div>
+				<div class="row" ng-show="error">
+					<div class="col-md-10">
+						<div class="alert alert-danger" role="alert">{{error}}</div>
 					</div>
 				</div>
 				<div class="row">
@@ -27,18 +37,30 @@
 									<th>Account Name</th>
 									<th>Date</th>
 									<th>Hours</th>
+									<th>&nbsp;</th>
 								</tr>
 							</thead>
 							<tbody>
 								<!-- Display each entry in a row -->
 								<tr ng-repeat="entry in entries">
-									<td><a href="entryDetail.html?id={{entry.timeEntryId}}">{{entry.feName}}</a></td>
+									<td>{{entry.feName}}</td>
 									<td>{{entry.accountName}}</td>
 									<td>{{entry.date}}</td>
 									<td>{{entry.hours}}</td>
+									<td>
+										<a href="editEntry.html?id={{entry.timeEntryId}}" class="btn btn-primary btn-sm">Edit</a>
+										<input type="button" ng-click="delete(entry.timeEntryId)" class="btn btn-danger btn-sm" value="Delete"/>
+									</td>
 								</tr>
 							</tbody>
 						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10">
+						<div class="well">
+							<a href="editEntry.html" class="btn btn-success">New Entry</a>
+						</div>
 					</div>
 				</div>
 			</div>

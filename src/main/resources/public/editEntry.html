@@ -6,55 +6,58 @@
     	<script src="js/controllers.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     	<script src="js/bootstrap.js"></script>
-    	<link rel="stylesheet" href="css/bootstrap.css" />
+    	<link rel="stylesheet" href="css/bootstrap.css"/>
+    	<link rel="stylesheet" href="css/bootstrap-theme.css"/>
 	</head>
-
 	<body>
-		<div ng-controller="EntryDetailController">
+		<div ng-controller="EditEntryController">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10">
 						<h2>Time Entry Details</h2>
+						<div>
+							<a href="/entries.html">Back to Entry List</a>
+						</div>
 						<hr/>
+					</div>
+				</div>
+				<div class="row" ng-show="message">
+					<div class="col-md-10">
+						<div class="alert alert-info" role="alert">{{message}}</div>
+					</div>
+				</div>
+				<div class="row" ng-show="error">
+					<div class="col-md-10">
+						<div class="alert alert-danger" role="alert">{{error}}</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-10">
 						<!-- Display the time entry detail form -->
-						<form class="form-horizontal">
+						<form>
 							<div class="form-group">
-								<label for="timeEntryId" class="col-sm-2 control-label">ID:</label>
-								<div class="col-sm-8">
-									<input type="text" id="timeEntryId" value="{{entry.timeEntryId}}" readonly="true"/>
-								</div>
+								<label for="timeEntryId">ID:</label>
+								<input type="text" id="timeEntryId" class="form-control" ng-model="entry.timeEntryId" value="{{entry.timeEntryId}}" readonly="true"/>
 							</div>
 							<div class="form-group">
-								<label for="feName" class="col-sm-2 control-label">FE Name:</label>
-								<div class="col-sm-8">
-									<input type="text" id="feName" value="{{entry.feName}}" placeholder="FE Name"/>
-								</div>
+								<label for="feName">FE Name:</label>
+								<input type="text" id="feName" class="form-control" ng-model="entry.feName" value="{{entry.feName}}" placeholder="FE Name" required="true"/>
 							</div>
 							<div class="form-group">
-								<label for="accountName" class="col-sm-2 control-label">Account Name:</label>
-								<div class="col-sm-8">
-									<input type="text" id="accountName" value="{{entry.accountName}}" placeholder="Account Name"/>
-								</div>
+								<label for="accountName">Account Name:</label>
+								<input type="text" id="accountName" class="form-control" ng-model="entry.accountName" value="{{entry.accountName}}" placeholder="Account Name" required="true"/>
 							</div>
 							<div class="form-group">
-								<label for="date" class="col-sm-2 control-label">Date:</label>
-								<div class="col-sm-8">
-									<input type="date" id="date" value="{{entry.date}}" placeholder="Date"/>
-								</div>
+								<label for="date">Date:</label>
+								<input type="date" id="date" class="form-control" ng-model="entry.date" value="{{entry.date}}" placeholder="Date" required="true"/>
 							</div>
 							<div class="form-group">
-								<label for="hours" class="col-sm-2 control-label">Hours:</label>
-								<div class="col-sm-8">
-									<input type="number" id="hours" value="{{entry.hours}}" placeholder="Hours"/>
-								</div>
+								<label for="hours">Hours:</label>
+								<input type="number" id="hours" class="form-control" ng-model="entry.hours" value="{{entry.hours}}" placeholder="Hours" required="true"/>
 							</div>
 							<div class="well">
-								<input type="submit" class="btn btn-primary" value="Save"/>
-								<a href="/entryDetail.html?id={{entry.timeEntryId}}" target="_self" class="btn btn-warning">Cancel</a>
+								<input type="submit" ng-click="update(entry)" class="btn btn-primary" value="Save"/>
+								<input type="button" ng-click="reset()" class="btn btn-warning" value="Reset"/>
 							</div>
 						</form>
 					</div>

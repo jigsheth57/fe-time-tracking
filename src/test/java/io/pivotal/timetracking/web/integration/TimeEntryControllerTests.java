@@ -120,4 +120,19 @@ public class TimeEntryControllerTests {
 		}
 	}
 	
+	/**
+	 * Tests the delete time entry method of the controller.
+	 */
+	@Test
+	public void testDeleteEntry() {
+		try {
+			this.mvc.perform(
+					MockMvcRequestBuilders.delete("/entries/delete/1"))
+					.andExpect(MockMvcResultMatchers.status().isOk());
+		} catch (Exception e) {
+			log.error(e);
+			TestCase.fail(e.getMessage());			
+		}
+	}
+	
 }
