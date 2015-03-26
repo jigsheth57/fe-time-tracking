@@ -4,11 +4,9 @@
 'use strict';
 
 /* 
- * Define the TimeEntry app scope for Angular
+ * Define the TimeEntry controllers scope for Angular
  */
-var timeEntryApp = angular.module('timeEntryApp', [], function($locationProvider) {
-	$locationProvider.html5Mode(true);
-});
+var timeEntryControllers = angular.module('timeEntryControllers', []);
 
 /*
  * Controller for getting all entries. This controller makes an ajax call to the 
@@ -47,7 +45,7 @@ timeEntryApp.controller('EntryListController', function($scope, $http) {
  * (/entries/:id), and also handle the form submission by making an ajax post request
  * to the TimeEntry REST controller (/entries/save) with the form data.
  */ 
-timeEntryApp.controller('EditEntryController', function($scope, $http, $location) {
+timeEntryApp.controller('EditEntryController', function($scope, $http, $routeParams) {
 	
 	//Handles the update request function
 	$scope.update = function(entry) {
@@ -63,7 +61,7 @@ timeEntryApp.controller('EditEntryController', function($scope, $http, $location
 	
 	//Handles the reset request function and the initial load of the entry
 	$scope.reset = function(entry) {
-		$http.get('/entries/' + $location.search()['id']).success(function(data) {
+		$http.get('/entries/' + $routeParams.entryId).success(function(data) {
 			$scope.entry = data;
 			$scope.message = "";
 			$scope.error = "";
