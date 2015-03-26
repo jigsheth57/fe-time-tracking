@@ -1,4 +1,4 @@
-Readme for Random Reply - Spring Boot
+Readme for FE Time Tracking
 =====================================
 
 ##Description
@@ -8,10 +8,10 @@ This is a Spring Boot application to demonstrate basic Spring web app attributes
 * Autoconfiguration for Spring Boot applications
 * Spring Boot starter packs for JPA and REST services
 * Spring test fixtures
-* Spring Web Security automatically applied to REST services
 * Explicit port binding and statelessness (ala 12-factor apps)
 * Management and monitoring with the actuator module
 * Run standalone or on Cloud Foundry
+* Using AngularJS that consumes Spring Boot REST services
 
 ##Getting Started
 To run the application standalone:
