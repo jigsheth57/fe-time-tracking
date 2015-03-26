@@ -4,14 +4,28 @@
 		<title>Time Entry Detail</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     	<script src="js/controllers.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    	<script src="js/bootstrap.js"></script>
+    	<link rel="stylesheet" href="css/bootstrap.css" />
 	</head>
 
 	<body>
-		<div ng-controller="EntryDetailController">
-			FE Name: {{entry.feName}}
-			Account Name: {{entry.accountName}}
-			Date: {{entry.date}}
-			Hours: {{entry.hours}}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Time Entry Details</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div ng-controller="EntryDetailController">
+						<p>FE Name: {{entry.feName}}</p>
+						<p>Account Name: {{entry.accountName}}</p>
+						<p>Date: {{entry.date}}</p>
+						<p>Hours: {{entry.hours}}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

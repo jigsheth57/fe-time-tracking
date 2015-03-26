@@ -4,28 +4,42 @@
 		<title>Time Entries</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     	<script src="js/controllers.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    	<script src="js/bootstrap.js"></script>
+    	<link rel="stylesheet" href="css/bootstrap.css" />
 	</head>
 
 	<body>
-		<div ng-controller="EntryListController">
-			<table>
-				<thead>
-					<tr>
-						<th>FE Name</th>
-						<th>Account Name</th>
-						<th>Date</th>
-						<th>Hours</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="entry in entries">
-						<td><a href="entryDetail.html?id={{entry.timeEntryId}}">{{entry.feName}}</a></td>
-						<td>{{entry.accountName}}</td>
-						<td>{{entry.date}}</td>
-						<td>{{entry.hours}}</td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h2>All Time Entries</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div ng-controller="EntryListController">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>FE Name</th>
+									<th>Account Name</th>
+									<th>Date</th>
+									<th>Hours</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="entry in entries">
+									<td><a href="entryDetail.html?id={{entry.timeEntryId}}">{{entry.feName}}</a></td>
+									<td>{{entry.accountName}}</td>
+									<td>{{entry.date}}</td>
+									<td>{{entry.hours}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
