@@ -67,7 +67,7 @@ public class TimeEntryController {
 	 * @param timeEntry The time entry to save.
 	 * @return The time entry saved, with any additional data from the save.
 	 */
-	@RequestMapping(value="/save", method=RequestMethod.POST)
+	@RequestMapping(value="/", method=RequestMethod.POST)
 	public @ResponseBody TimeEntry saveTimeEntry(@RequestBody TimeEntry timeEntry) {
 		
 		TimeEntry savedEntry = timeEntryRepository.save(timeEntry);
@@ -80,7 +80,7 @@ public class TimeEntryController {
 	 * Deletes a time entry.
 	 * @param timeEntryId The id of the time entry to delete.
 	 */
-	@RequestMapping(value="/delete/{timeEntryId}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{timeEntryId}", method=RequestMethod.DELETE)
 	public void deleteTimeEntry(@PathVariable Long timeEntryId) {
 		
 		log.debug(String.format("Deleting time entry for id %d.", timeEntryId));

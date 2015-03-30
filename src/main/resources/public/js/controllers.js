@@ -18,7 +18,7 @@ timeEntryApp.controller('EntryListController', function($scope, $http) {
 	//Handles the delete request function
 	$scope.delete = function(entryId) {
 		console.log("deleting id " + entryId);
-		$http.delete("/entries/delete/" + entryId).success(function(data, status, headers, config) {
+		$http.delete("/entries/" + entryId).success(function(data, status, headers, config) {
 			$scope.getEntries();
 			$scope.message = "Successfully deleted the entry.";
 			$scope.error = ""
@@ -49,7 +49,7 @@ timeEntryApp.controller('EditEntryController', function($scope, $http, $routePar
 	
 	//Handles the update request function
 	$scope.update = function(entry) {
-		$http.post("/entries/save", entry).success(function(data, status, headers, config) {
+		$http.post("/entries/", entry).success(function(data, status, headers, config) {
 			$scope.entry = data;
 			$scope.message = "Successfully saved the entry.";
 			$scope.error = "";

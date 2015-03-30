@@ -110,7 +110,7 @@ public class TimeEntryControllerTests {
 				1.5d);
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.post("/entries/save")
+					MockMvcRequestBuilders.post("/entries/")
 					.contentType("application/json")
 					.content(new ObjectMapper().writeValueAsString(entry))
 			)
@@ -130,7 +130,7 @@ public class TimeEntryControllerTests {
 	public void testDeleteEntry() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.delete("/entries/delete/1"))
+					MockMvcRequestBuilders.delete("/entries/1"))
 					.andExpect(MockMvcResultMatchers.status().isOk());
 					
 		} catch (Exception e) {
