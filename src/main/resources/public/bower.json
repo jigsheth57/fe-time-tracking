@@ -1,7 +1,7 @@
 {
   "name": "angular-fe-time-tracking",
   "description": "AngularJS Time Tracking Project",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/bjimerson-pivotal/fe-time-tracking",
   "license": "ASF",
   "private": true,
