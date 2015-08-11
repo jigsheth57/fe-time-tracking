@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10">
-				<h2>All Time Entries</h2>
+				<h3><img alt="logo" src="../images/gogo-logo-lock.png"> Time Tracking</h3>
 				<hr/>
 			</div>
 		</div>
@@ -21,8 +21,8 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>FE Name</th>
-							<th>Account Name</th>
+							<th>Employee</th>
+							<th>Account</th>
 							<th>Date</th>
 							<th>Hours</th>
 							<th>&nbsp;</th>
@@ -33,7 +33,7 @@
 						<tr ng-repeat="entry in entries">
 							<td>{{entry.feName}}</td>
 							<td>{{entry.accountName}}</td>
-							<td>{{entry.date}}</td>
+							<td>{{entry.date | date:'MM/dd/yyyy'}}</td>
 							<td>{{entry.hours}}</td>
 							<td>
 								<a href="#/entries/{{entry.timeEntryId}}" class="btn btn-primary btn-sm">Edit</a>

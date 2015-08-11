@@ -28,7 +28,7 @@
 						<input type="text" id="timeEntryId" class="form-control" ng-model="entry.timeEntryId" value="{{entry.timeEntryId}}" readonly="true"/>
 					</div>
 					<div class="form-group">
-						<label for="feName">FE Name:</label>
+						<label for="feName">Name:</label>
 						<input type="text" id="feName" class="form-control" ng-model="entry.feName" value="{{entry.feName}}" placeholder="FE Name" required="true"/>
 					</div>
 					<div class="form-group">
@@ -37,7 +37,7 @@
 					</div>
 					<div class="form-group">
 						<label for="date">Date:</label>
-						<input type="text" id="date" class="form-control" ng-model="entry.date" value="{{dateToDisplay}}" placeholder="Date" required="true"/>
+						<input type="date" id="date" date-parser="MM/dd/yyyy" class="form-control input-md" ng-model="entry.date" value="{{entry.date}}" required="true"/>
 					</div>
 					<div class="form-group">
 						<label for="hours">Hours:</label>

@@ -10,13 +10,13 @@
 	<name>FE Time Tracking</name>
 	<url>https://github.com/bjimerson-pivotal/fe-time-tracking</url>
 	<inceptionYear>2015</inceptionYear>
-	
+
 	<!-- Organization -->
 	<organization>
 		<name>Pivotal</name>
 		<url>http://www.pivotal.io</url>
 	</organization>
-		
+
 	<!-- Developers -->
 	<developers>
 		<developer>
@@ -25,34 +25,44 @@
 			<organization>Pivotal</organization>
 		</developer>
 	</developers>
-	
+
 	<!-- SCM properties -->
 	<scm>
 		<url>scm:git:https://github.com/bjimerson-pivotal/fe-time-tracking</url>
 	</scm>
-	
+
 	<!-- Issues properties -->
 	<issueManagement>
 		<url>https://github.com/bjimerson-pivotal/fe-time-tracking/issues</url>
 	</issueManagement>
-	
+
 	<!-- Custom repositories -->
 	<repositories>
 		<repository>
-			<id>spring-boot-repo</id>
-			<url>http://repo.spring.io/libs-release</url>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
-	
-	<!-- Spring Boot starter parent POM -->
+
+	<!-- Spring Boot starter parent POM <parent> <groupId>org.springframework.boot</groupId> 
+		<artifactId>spring-boot-starter-parent</artifactId> <version>1.2.3.RELEASE</version> 
+		</parent> -->
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.2.RELEASE</version>
+		<groupId>io.pivotal.spring.cloud</groupId>
+		<artifactId>spring-cloud-services-starter-parent</artifactId>
+		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<!-- Dependencies -->
 	<dependencies>
+		<dependency>
+			<groupId>io.pivotal.spring.cloud</groupId>
+			<artifactId>spring-cloud-services-starter-service-registry</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -82,7 +92,7 @@
 			<version>2.0.0</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 	<!-- Reporting properties -->
@@ -95,7 +105,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	
+
 	<!-- Build properties -->
 	<build>
 		<resources>

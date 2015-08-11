@@ -31,6 +31,9 @@ timeEntryApp.controller('EntryListController', function($scope, $http) {
 	//Reloads the data
 	$scope.getEntries = function() {
 		$http.get('/entries/').success(function(data) {
+			console.log("response data: "+JSON.stringify(data));
+			//console.log("employees data: "+data._embedded);
+			//console.log("employees response data: "+JSON.stringify(data._embedded));
 			$scope.entries = data;
 		})
 	};
