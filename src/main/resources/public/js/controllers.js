@@ -7,13 +7,13 @@
  * Define the TimeEntry controllers scope for Angular
  */
 var timeEntryControllers = angular.module('timeEntryControllers', []);
-
+timeEntryApp.$inject = ['$sessionStorage'];
 /*
  * Controller for getting all entries. This controller makes an ajax call to the 
  * TimeEntry REST controller (/entries/) to get all of the entries, and uses
  * the results for the model.
  */ 
-timeEntryApp.controller('EntryListController', function($scope, $http) {
+timeEntryApp.controller('EntryListController', function($scope, $sessionStorage, $http) {
 	
 	//Handles the delete request function
 	$scope.delete = function(entryId) {
@@ -38,8 +38,22 @@ timeEntryApp.controller('EntryListController', function($scope, $http) {
 		})
 	};
 
+    $scope.login = function() {
+    	var callbackURL = window.location.origin + "/oauth_secure.html";
+    	var oauth2URL = "https://uaa.west-1.fe.gopivotal.com/oauth/authorize?response_type=token&client_id=portal&redirect_uri="+callbackURL;
+    	//console.log(oauth2URL);
+    	$sessionStorage.put('uaa',window.sessionStorage.getItem('uaa'),1/72);
+    	var uaa = $sessionStorage.get('uaa');
+    	console.log(uaa);
+    	if(uaa) {
+        	if(JSON.parse(uaa).oauth.access_token)
+        		$scope.getEntries();
+    	} else
+    		window.location.href = oauth2URL;
+    	//window.sessionStorage.removeItem('uaa');
+    }
 	//Initial page load
-	$scope.getEntries();
+	$scope.login();
 });
 
 /*

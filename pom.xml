@@ -53,7 +53,7 @@
 	<parent>
 		<groupId>io.pivotal.spring.cloud</groupId>
 		<artifactId>spring-cloud-services-starter-parent</artifactId>
-		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<version>1.0.0.M1</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -120,6 +120,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

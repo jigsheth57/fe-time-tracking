@@ -1,4 +1,4 @@
-var timeEntryApp = angular.module('timeEntryApp', ['ngRoute', 'timeEntryControllers']);
+var timeEntryApp = angular.module('timeEntryApp', ['ngRoute', 'swxSessionStorage', 'timeEntryControllers']);
 
 timeEntryApp.config(['$routeProvider', 
     function($routeProvider) {
