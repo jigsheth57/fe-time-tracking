@@ -3,7 +3,6 @@ package io.pivotal.timetracking;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 
 /**
@@ -15,9 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @SpringBootApplication
-@ComponentScan
 @EnableAutoConfiguration
-//@EnableDiscoveryClient
 public class Application {
 
 	/**
