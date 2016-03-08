@@ -48,22 +48,6 @@ public class TimeEntryController {
 	}
 	
 	/**
-	 * Gets all of the time entries by feName
-	 * @return A list of all of the time entries by feName
-	 */
-	@RequestMapping(value="/{feName}", method=RequestMethod.GET)
-	public @ResponseBody List<TimeEntry> getAllTimeEntries(@PathVariable String feName) {
-		
-		Iterable<TimeEntry> timeEntries = timeEntryRepository.findByFeName(feName);
-		log.debug(String.format("All time entries fetched: [%s]", timeEntries));
-		ArrayList<TimeEntry> timeEntryList = new ArrayList<TimeEntry>();
-		for (TimeEntry te : timeEntries) {
-			timeEntryList.add(te);
-		}
-		return timeEntryList;
-	}
-
-	/**
 	 * Gets a particular time entry by it's id.
 	 * @param timeEntryId The id of the time entry to get.
 	 * @return The time entry requested.

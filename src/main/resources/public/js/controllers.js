@@ -53,7 +53,7 @@ timeEntryApp.controller('EntryListController', function($scope, $sessionStorage,
     	//window.sessionStorage.removeItem('uaa');
     }
 	//Initial page load
-	$scope.login();
+	$scope.getEntries();
 });
 
 /*
