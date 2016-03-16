@@ -88,7 +88,7 @@ public class TimeEntryControllerTests {
 	public void testGetEntryById() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.get("/entries/1"))
+					MockMvcRequestBuilders.get("/entries/11"))
 					.andExpect(MockMvcResultMatchers.status().isOk())
 					.andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
 					.andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasEntry("accountName", "Sample account 1")));
@@ -130,7 +130,7 @@ public class TimeEntryControllerTests {
 	public void testDeleteEntry() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.delete("/entries/1"))
+					MockMvcRequestBuilders.delete("/entries/11"))
 					.andExpect(MockMvcResultMatchers.status().isOk());
 					
 		} catch (Exception e) {

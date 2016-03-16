@@ -13,3 +13,4 @@ insert into time_entry(time_entry_id, fe_name, account_name, `date`, hours) valu
 insert into time_entry(time_entry_id, fe_name, account_name, `date`, hours) values (8, 'Mark Ardito', 'Centrica', {ts '2015-01-01 00:00:00.00'}, 1.5);
 insert into time_entry(time_entry_id, fe_name, account_name, `date`, hours) values (9, 'Daniel Soleymani', 'Pivotal', {ts '2015-01-01 00:00:00.00'}, 1.5);
 insert into time_entry(time_entry_id, fe_name, account_name, `date`, hours) values (10, 'Mark Ediger', 'Pivotal', {ts '2015-01-01 00:00:00.00'}, 1.5);
+insert into time_entry(time_entry_id, fe_name, account_name, `date`, hours) values (11, 'Sample feName 1', 'Sample account 1', {ts '2015-01-01 00:00:00.00'}, 1.5);

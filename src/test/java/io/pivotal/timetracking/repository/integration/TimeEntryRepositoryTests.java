@@ -1,23 +1,24 @@
 package io.pivotal.timetracking.repository.integration;
 
-import io.pivotal.timetracking.Application;
-import io.pivotal.timetracking.domain.TimeEntry;
-import io.pivotal.timetracking.repository.TimeEntryRepository;
-
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+
+import io.pivotal.timetracking.Application;
+import io.pivotal.timetracking.domain.TimeEntry;
+import io.pivotal.timetracking.repository.TimeEntryRepository;
+import junit.framework.TestCase;
 
 /**
  * Integration tests for the <code>TimeEntryRepository</code>
@@ -33,8 +34,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author Brian Jimerson
  *
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
+@WebAppConfiguration
+@IntegrationTest("server.port:0")
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class TimeEntryRepositoryTests {
 	
