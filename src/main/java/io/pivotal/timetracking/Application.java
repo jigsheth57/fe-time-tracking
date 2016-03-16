@@ -1,8 +1,10 @@
 package io.pivotal.timetracking;
 
+import org.h2.server.web.WebServlet;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.embedded.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
 
 
 /**
@@ -14,7 +16,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class Application {
 
 	/**
@@ -24,6 +25,4 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-	
-
 }

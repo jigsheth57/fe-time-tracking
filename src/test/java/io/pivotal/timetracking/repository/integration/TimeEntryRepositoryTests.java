@@ -94,25 +94,6 @@ public class TimeEntryRepositoryTests {
 		
 	}
 	
-
-	/**
-	 * Tests the repository's findByDate method, by
-	 * getting the first time entry from findAll, and then 
-	 * using that time entry's date to call and assert the 
-	 * findByDate method's results.
-	 */
-	@Test
-	public void testFindByDate() {
-		
-		TimeEntry firstTimeEntry = timeEntryRepository.findAll().iterator().next();
-		List<TimeEntry> resultOfFindByAccountName = timeEntryRepository.findByDate(
-				firstTimeEntry.getDate());
-		TestCase.assertEquals(
-				firstTimeEntry.getDate(), 
-				resultOfFindByAccountName.get(0).getDate());
-		
-	}
-	
 	/**
 	 * Tests the repository's findOne method, by
 	 * getting the first time entry from findAll, and

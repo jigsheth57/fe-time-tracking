@@ -1,6 +1,5 @@
 package io.pivotal.timetracking.repository;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -30,12 +29,4 @@ public interface TimeEntryRepository extends JpaRepository<TimeEntry, Long> {
 	 * @return A list of time entries with a matching account name.
 	 */
 	List<TimeEntry> findByAccountName(@Param("accountName") String accountName);
-
-	/**
-	 * Find all of the time entries with the specified date.
-	 * @param date The date to find entries for.
-	 * @return A list of time entries with a matching date.
-	 */
-	List<TimeEntry> findByDate(Date date);
-
 }
