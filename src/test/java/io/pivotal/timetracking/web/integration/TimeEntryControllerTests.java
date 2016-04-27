@@ -90,7 +90,6 @@ public class TimeEntryControllerTests {
 			this.mvc.perform(
 					MockMvcRequestBuilders.get("/entries/11"))
 					.andExpect(MockMvcResultMatchers.status().isOk())
-					.andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
 					.andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasEntry("accountName", "Sample account 1")));
 		} catch (Exception e) {
 			log.error(e);
