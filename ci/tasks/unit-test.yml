@@ -12,4 +12,4 @@ outputs:
   - name: build-artifact
 
 run:
-  path: lab-repo/lab1/ci/tasks/unit-test.sh
+  path: lab-repo/ci/tasks/unit-test.sh
