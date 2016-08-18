@@ -1,8 +1,12 @@
 ---
 timeout: 180
-memory: 512M
+memory: 768M
+env:
+    spring.datasource.platform: mysql
 instances: 1
 applications:
- - name: hcsctimetracking
+ - name: timetracking
    random-route: true
    path: target/fe-time-tracking-1.0.0-SNAPSHOT.jar
+   services: [ timetrackingdb ]
+   

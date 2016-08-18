@@ -6,6 +6,13 @@ import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * The Spring configuration and adding entry point for H2 web console
+ * 
+ * @author Jignesh Sheth
+ *
+ */
+
 @Configuration
 @EnableAutoConfiguration
 public class WebConfiguration {

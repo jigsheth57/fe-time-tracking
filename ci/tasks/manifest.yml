@@ -4,6 +4,4 @@ memory: 768M
 instances: 1
 applications:
  - name: timetracking
-#   host: timetrackng
    random-route: true
-   path: target/fe-time-tracking-1.0.0-SNAPSHOT.jar

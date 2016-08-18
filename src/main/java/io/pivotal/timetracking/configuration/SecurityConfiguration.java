@@ -5,6 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * The Spring configuration and authorizing H2 web console
+ * 
+ * @author Jignesh Sheth
+ *
+ */
+
 @Configuration
 @EnableAutoConfiguration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
