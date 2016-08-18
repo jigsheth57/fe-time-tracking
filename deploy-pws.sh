@@ -1,13 +1,13 @@
 #!/bin/bash
 CF_APP='timetracking'
-CF_APPS_DOMAIN='app.azure.pcf-apps.com'
+CF_APPS_DOMAIN='cfapps.io'
 
 mvn clean install package
 if [ "$?" -ne "0" ]; then
   exit $?
 fi
 
-DEPLOYED_VERSION_CMD=$(CF_COLOR=false cf a | grep $CF_APP- | cut -d" " -f1| cut -d"-" -f2)
+DEPLOYED_VERSION_CMD=$(CF_COLOR=false cf routes | grep $CF_APP | awk '{ print $4; }' | cut -d"," -f1 | cut -d"-" -f2)
 DEPLOYED_VERSION="$DEPLOYED_VERSION_CMD"
 echo "Deployed Version: $DEPLOYED_VERSION"
 CURRENT_VERSION="blue"
@@ -15,7 +15,7 @@ if [ ! -z "$DEPLOYED_VERSION" -a "$DEPLOYED_VERSION" == "blue" ]; then
   CURRENT_VERSION="green"
 fi
 # push a new version and map the route
-cf cs p-mysql 100mb-dev timetrackingdb
+cf cs cleardb spark timetrackingdb
 cf p "$CF_APP-$CURRENT_VERSION" -n "$CF_APP-$CURRENT_VERSION" --no-start
 cf set-env "$CF_APP-$CURRENT_VERSION" spring.datasource.platform mysql
 cf bs "$CF_APP-$CURRENT_VERSION" timetrackingdb
