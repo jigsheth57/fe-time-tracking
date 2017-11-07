@@ -16,6 +16,10 @@ cf login -a $API_ENDPOINT -u $USERNAME -p $PASSWORD -o $ORG -s $SPACE --skip-ssl
 #fi
 # push a new version and map the route
 #cf p "$CF_APP_NAME-$CURRENT_VERSION" -p lab-release/fe-time-tracking-*.jar -f lab-repo/ci/tasks/manifest.yml
+echo $PWD
+ls -lga lab-release/
+ls -lga lab-repo/ci/tasks/
+
 cf bgd "$CF_APP_NAME" -f lab-repo/ci/tasks/manifest.yml
 #cf map-route "$CF_APP_NAME-$CURRENT_VERSION" $CF_APPS_DOMAIN -n $CF_ROUTE_NAME
 #if [ ! -z "$DEPLOYED_VERSION" ]; then
