@@ -9,4 +9,4 @@ applications:
    buildpack: java_buildpack_offline
    health-check-type: http
    health-check-http-endpoint: /health
-   path: lab-release/fe-time-tracking-*.war
+   path: ../../../lab-release/fe-time-tracking-*.war
