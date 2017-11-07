@@ -18,35 +18,43 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * The REST controller for working with <code>TimeEntry</code> resources.
- * 
+ *
  * @author Brian Jimerson
  *
  */
 @RestController
 @RequestMapping(value="/entries")
 public class TimeEntryController {
-	
+
 	@Autowired
 	protected TimeEntryRepository timeEntryRepository;
-	
+
 	private static final Log log = LogFactory.getLog(TimeEntryController.class);
-	
+
 	/**
 	 * Gets all of the time entries.
 	 * @return A list of all of the time entries.
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public @ResponseBody List<TimeEntry> getAllTimeEntries() {
-		
+
 		Iterable<TimeEntry> timeEntries = timeEntryRepository.findAll();
 		log.debug(String.format("All time entries fetched: [%s]", timeEntries));
 		ArrayList<TimeEntry> timeEntryList = new ArrayList<TimeEntry>();
 		for (TimeEntry te : timeEntries) {
 			timeEntryList.add(te);
 		}
+		try {
+			//sleep 2 seconds
+			Thread.sleep(2000);
+			log.debug("Testing...");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		return timeEntryList;
 	}
-	
+
 	/**
 	 * Gets a particular time entry by it's id.
 	 * @param timeEntryId The id of the time entry to get.
@@ -54,14 +62,14 @@ public class TimeEntryController {
 	 */
 	@RequestMapping(value="/{timeEntryId}", method=RequestMethod.GET)
 	public @ResponseBody TimeEntry getTimeEntry(@PathVariable Long timeEntryId) {
-		
+
 		TimeEntry timeEntry = timeEntryRepository.findOne(timeEntryId);
 		log.debug(String.format("Found time entry for id %d: [%s]",
 				timeEntryId, timeEntry));
 		return timeEntry;
-		
+
 	}
-	
+
 	/**
 	 * Saves a time entry
 	 * @param timeEntry The time entry to save.
@@ -69,23 +77,23 @@ public class TimeEntryController {
 	 */
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	public @ResponseBody TimeEntry saveTimeEntry(@RequestBody TimeEntry timeEntry) {
-		
+
 		TimeEntry savedEntry = timeEntryRepository.save(timeEntry);
 		log.debug(String.format("Saved time entry: [%s]", savedEntry));
 		return savedEntry;
-		
+
 	}
-	
+
 	/**
 	 * Deletes a time entry.
 	 * @param timeEntryId The id of the time entry to delete.
 	 */
 	@RequestMapping(value="/{timeEntryId}", method=RequestMethod.DELETE)
 	public void deleteTimeEntry(@PathVariable Long timeEntryId) {
-		
+
 		log.debug(String.format("Deleting time entry for id %d.", timeEntryId));
 		timeEntryRepository.delete(timeEntryId);
 	}
-	
+
 
 }

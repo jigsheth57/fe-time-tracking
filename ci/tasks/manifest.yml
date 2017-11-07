@@ -2,6 +2,11 @@
 timeout: 180
 memory: 768M
 instances: 1
+env:
+    spring.datasource.platform: h2
 applications:
  - name: timetracking
-   random-route: true
+   buildpack: java_buildpack_offline
+   health-check-type: http
+   health-check-http-endpoint: /health
+   path: lab-release/fe-time-tracking-*.war

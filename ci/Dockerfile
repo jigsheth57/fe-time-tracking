@@ -15,7 +15,7 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 RUN apt-get update
 
 RUN apt-get install -y wget curl default-jdk maven net-tools
-RUN wget -O 'cf.deb' https://s3.amazonaws.com/pcf-softwares/cf-cli-installer_6.21.1_x86-64.deb
+RUN wget -O 'cf.deb' https://s3.amazonaws.com/pcf-softwares-57/cf-cli-installer_6.32.0_x86-64.deb
 RUN dpkg --install cf.deb
 RUN java -version
 RUN mvn -v
