@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The Spring configuration and entry point for
  * the application.
  * 
- * @author Jignesh Sheth
+ * @author Brian Jimerson
  *
  */
 

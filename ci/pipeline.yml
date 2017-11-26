@@ -8,7 +8,7 @@ resources:
 - name: version
   type: semver
   source:
-    bucket: pcf-workshop-artifacts
+    bucket: ci-pcf-workshop-artifacts
     key: timetracking-demo-current-version
     access_key_id: {{s3-access-key-id}}
     secret_access_key: {{s3-secret-access-key}}
@@ -17,8 +17,8 @@ resources:
 - name: lab-release
   type: s3
   source:
-    bucket: pcf-workshop-artifacts
-    regexp: fe-time-tracking-(.*).war
+    bucket: ci-pcf-workshop-artifacts
+    regexp: fe-time-tracking-(.*).jar
     access_key_id: {{s3-access-key-id}}
     secret_access_key: {{s3-secret-access-key}}
 
@@ -45,7 +45,7 @@ jobs:
     file: lab-repo/ci/tasks/build-artifact.yml
     timeout: 5m
   - put: lab-release
-    params: {file: build-artifact/fe-time-tracking-*.war}
+    params: {file: build-artifact/fe-time-tracking-*.jar}
   - put: version
     params: {file: version/number}
 
@@ -63,7 +63,7 @@ jobs:
       platform: linux
       image_resource:
         type: docker-image
-        source: {repository: jigsheth57/jumpbox}
+        source: {repository: jigsheth57/pcfworkshop}
       inputs:
         - name: lab-repo
         - name: lab-release
@@ -76,7 +76,7 @@ jobs:
         ORG: {{cf-dev-organization}}
         SPACE: {{cf-dev-space}}
         CF_APPS_DOMAIN: {{cf-dev-domain}}
-        CF_APP_NAME: timetracking-dev
+        CF_APP_NAME: timetracking
         CF_ROUTE_NAME: timetracking-dev
 
 - name: manual-deploy-to-prod
@@ -91,7 +91,7 @@ jobs:
       platform: linux
       image_resource:
         type: docker-image
-        source: {repository: jigsheth57/jumpbox}
+        source: {repository: jigsheth57/pcfworkshop}
       inputs:
         - name: lab-repo
         - name: lab-release
@@ -105,4 +105,4 @@ jobs:
         SPACE: {{cf-prod-space}}
         CF_APPS_DOMAIN: {{cf-prod-domain}}
         CF_APP_NAME: timetracking
-        CF_ROUTE_NAME: timetracking
+        CF_ROUTE_NAME: timetracking-prod

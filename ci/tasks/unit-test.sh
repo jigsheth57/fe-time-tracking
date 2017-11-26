@@ -3,4 +3,4 @@ set -e
 
 cd lab-repo
 
-mvn clean test
+mvn clean test -Djava.version=1.7
