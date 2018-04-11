@@ -11,6 +11,7 @@ DEPLOYED_VERSION_CMD=$(CF_COLOR=false cf routes | grep $CF_ROUTE_NAME | awk '{ p
 DEPLOYED_VERSION="$DEPLOYED_VERSION_CMD"
 echo "Deployed Version: $DEPLOYED_VERSION"
 CURRENT_VERSION="blue"
+cf cs p-mysql 100mb timetrackingdb
 if [ ! -z "$DEPLOYED_VERSION" -a "$DEPLOYED_VERSION" == "blue" ]; then
   CURRENT_VERSION="green"
 fi

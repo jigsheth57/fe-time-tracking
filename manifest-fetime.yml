@@ -6,7 +6,7 @@ env:
 instances: 1
 applications:
  - name: timetracking
-   random-route: true
+   # random-route: true
    path: target/fe-time-tracking-1.0.0-SNAPSHOT.jar
    services: [ timetrackingdb ]
    

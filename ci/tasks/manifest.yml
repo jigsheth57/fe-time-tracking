@@ -1,7 +1,10 @@
 ---
 timeout: 180
 memory: 768M
+env:
+    spring.datasource.platform: mysql
 instances: 1
 applications:
  - name: timetracking
-   random-route: true
+   # random-route: true
+   services: [ timetrackingdb ]
