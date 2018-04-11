@@ -23,4 +23,5 @@ if [ ! -z "$DEPLOYED_VERSION" ]; then
   cf unmap-route "$CF_APP_NAME-$DEPLOYED_VERSION" $CF_APPS_DOMAIN -n $CF_ROUTE_NAME
   # Scaling down
   cf scale "$CF_APP_NAME-$DEPLOYED_VERSION" -i 1
+  cf sp "$CF_APP_NAME-$DEPLOYED_VERSION"
 fi
