@@ -78,6 +78,26 @@ jobs:
         CF_APPS_DOMAIN: {{cf-dev-domain}}
         CF_APP_NAME: timetracking
         CF_ROUTE_NAME: timetracking-dev
+  - task: deploy-to-stage
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: jigsheth57/pcfworkshop}
+      inputs:
+        - name: lab-repo
+        - name: lab-release
+      run:
+        path: lab-repo/ci/tasks/cf-deployment.sh
+      params:
+        API_ENDPOINT: {{cf-stg-api}}
+        USERNAME: {{cf-stg-username}}
+        PASSWORD: {{cf-stg-password}}
+        ORG: {{cf-stg-organization}}
+        SPACE: {{cf-stg-space}}
+        CF_APPS_DOMAIN: {{cf-stg-domain}}
+        CF_APP_NAME: timetracking
+        CF_ROUTE_NAME: timetracking-stg
 
 - name: manual-deploy-to-prod
   plan:
