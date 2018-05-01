@@ -9,4 +9,3 @@ applications:
    # random-route: true
    path: target/fe-time-tracking-1.0.0-SNAPSHOT.jar
    services: [ timetrackingdb ]
-   
