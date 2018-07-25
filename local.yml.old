@@ -1,0 +1,5 @@
+applications:
+- name: timetracking
+  memory: 768M
+  env:
+    spring.datasource.platform: mysql
