@@ -11,7 +11,7 @@ DEPLOYED_VERSION_CMD=$(CF_COLOR=false cf routes | grep $CF_ROUTE_NAME | awk '{ p
 DEPLOYED_VERSION="$DEPLOYED_VERSION_CMD"
 echo "Deployed Version: $DEPLOYED_VERSION"
 CURRENT_VERSION="blue"
-cf cs p.mysql db-small timetrackingdb
+cf cs p-mysql 100mb timetrackingdb
 echo "Checking status of the Service Instances!"
 until [ `cf service timetrackingdb | grep -c "succeeded"` -eq 1  ]
 do
