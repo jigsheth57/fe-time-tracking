@@ -1,0 +1,33 @@
+server:
+  port: ${PORT:8080}
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.web: INFO
+    io.pivotal: DEBUG
+
+management:
+  cloudfoundry:
+    skip-ssl-validation: true
+    enabled: true
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      roles: USER
+      show-details: always
+    env:
+      keys-to-sanitize:  pwd,uid,password,secret,key,client_id,client_key # suffix or regex
+
+#JPA properties
+spring:
+  datasource:
+    platform: h2
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update

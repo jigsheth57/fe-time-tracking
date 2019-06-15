@@ -1,0 +1,16 @@
+{
+  "name": "angular-fe-time-tracking",
+  "description": "AngularJS Time Tracking Project",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bjimerson-pivotal/fe-time-tracking",
+  "license": "ASF",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.*",
+    "angular-mocks": "~1.4.*",
+    "jquery": "2.1.1",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.4.*",
+    "angular-swx-session-storage": "*"
+  }
+}

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: FE Time Tracking
+Implementation-Version: 1.0.0-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: jsheth
+Start-Class: io.pivotal.timetracking.Application
+Implementation-Vendor-Id: io.pivotal.fe
+Spring-Boot-Version: 1.2.5.RELEASE
+Created-By: Apache Maven 3.6.0
+Build-Jdk: 11.0.1
+Implementation-Vendor: Pivotal
+Main-Class: org.springframework.boot.loader.JarLauncher
+

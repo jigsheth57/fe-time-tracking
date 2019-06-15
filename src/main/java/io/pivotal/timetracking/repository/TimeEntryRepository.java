@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 
 import io.pivotal.timetracking.domain.TimeEntry;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 /**
  * JPA CRUD repository interface for a <code>TimeEntry</code> 
@@ -14,6 +15,7 @@ import io.pivotal.timetracking.domain.TimeEntry;
  * @author Brian Jimerson
  *
  */
+@RepositoryRestResource(collectionResourceRel = "timeentries", path = "timeentries")
 public interface TimeEntryRepository extends JpaRepository<TimeEntry, Long> {
 	
 	/**

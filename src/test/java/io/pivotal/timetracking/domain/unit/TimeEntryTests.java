@@ -28,9 +28,9 @@ public class TimeEntryTests {
 	@Before
 	public void buildTimeEntry() {
 		timeEntry = new TimeEntry(
-				"Test FE", 
-				"Test Account", 
-				new Date(Calendar.getInstance().getTimeInMillis()), 
+				"Test FE",
+				"Test Account",
+				new Date(Calendar.getInstance().getTimeInMillis()),
 				2.5);
 	}
 

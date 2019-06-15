@@ -39,7 +39,7 @@
 							<td>{{entry.date | date:'MM/dd/yyyy'}}</td>
 							<td>{{entry.hours}}</td>
 							<td>
-								<a href="#/entries/{{entry.timeEntryId}}" class="btn btn-primary btn-sm">Edit</a>
+								<a href="#/timeentries/{{entry.timeEntryId}}" class="btn btn-primary btn-sm">Edit</a>
 								<input type="button" ng-click="delete(entry.timeEntryId)" class="btn btn-danger btn-sm" value="Delete"/>
 							</td>
 						</tr>
@@ -50,7 +50,7 @@
 		<div class="row">
 			<div class="col-md-10">
 				<div class="well">
-					<a href="#/entries/new" class="btn btn-success">New Entry</a>
+					<a href="#/timeentries/99999" class="btn btn-success">New Entry</a>
 				</div>
 			</div>
 		</div>

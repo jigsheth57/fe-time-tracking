@@ -1,24 +1,22 @@
 package io.pivotal.timetracking.repository.integration;
 
-import java.sql.Date;
-import java.util.Calendar;
-import java.util.List;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.annotation.DirtiesContext.ClassMode;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-
-import io.pivotal.timetracking.Application;
+import static org.assertj.core.api.Assertions.*;
 import io.pivotal.timetracking.domain.TimeEntry;
 import io.pivotal.timetracking.repository.TimeEntryRepository;
 import junit.framework.TestCase;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityNotFoundException;
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Integration tests for the <code>TimeEntryRepository</code>
@@ -36,29 +34,28 @@ import junit.framework.TestCase;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-@IntegrationTest("server.port:0")
-@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
+@DataJpaTest
+@Transactional
 public class TimeEntryRepositoryTests {
 	
 	
 	//The repository to test.
 	@Autowired
 	TimeEntryRepository timeEntryRepository;
-	
+
+//	@Before
+//	public void setUp() {
+//		TimeEntry te = new TimeEntry("Sample feName 1","Sample account 1",new Date(Calendar.getInstance().getTimeInMillis()),1.0d);
+//		timeEntryRepository.save(te);
+//	}
 	/**
 	 * Tests the repository's findAll method, by asserting that
 	 * there is more than 0 replies returned.
 	 */
 	@Test
 	public void testFindAll() {
-		
 		Iterable<TimeEntry> timeEntries = timeEntryRepository.findAll();
-		TestCase.assertNotNull(
-				"Find all should return at least 1 result.",
-				timeEntries.iterator().next());
-		
+		assertThat(timeEntries).isNotEmpty();
 	}
 	
 	
@@ -70,14 +67,8 @@ public class TimeEntryRepositoryTests {
 	 */
 	@Test
 	public void testFindByFeName() {
-		
-		TimeEntry firstTimeEntry = timeEntryRepository.findAll().iterator().next();
-		List<TimeEntry> resultOfFindByFeName = timeEntryRepository.findByFeName(
-				firstTimeEntry.getFeName());
-		TestCase.assertEquals(
-				firstTimeEntry.getFeName(), 
-				resultOfFindByFeName.get(0).getFeName());
-		
+		List<TimeEntry> resultOfFindByFeName = timeEntryRepository.findByFeName("Sample feName 1");
+		assertThat("Sample feName 1").isEqualTo(resultOfFindByFeName.get(0).getFeName());
 	}
 	
 	/**
@@ -88,14 +79,8 @@ public class TimeEntryRepositoryTests {
 	 */
 	@Test
 	public void testFindByAccountName() {
-		
-		TimeEntry firstTimeEntry = timeEntryRepository.findAll().iterator().next();
-		List<TimeEntry> resultOfFindByAccountName = timeEntryRepository.findByAccountName(
-				firstTimeEntry.getAccountName());
-		TestCase.assertEquals(
-				firstTimeEntry.getAccountName(), 
-				resultOfFindByAccountName.get(0).getAccountName());
-		
+		List<TimeEntry> resultOfFindByAccountName = timeEntryRepository.findByAccountName("Sample account 1");
+		assertThat("Sample account 1").isEqualTo(resultOfFindByAccountName.get(0).getAccountName());
 	}
 	
 	/**
@@ -106,26 +91,14 @@ public class TimeEntryRepositoryTests {
 	 */
 	@Test
 	public void testFindOne() {
-		
-		TimeEntry firstTimeEntry = timeEntryRepository.findAll().iterator().next();
+		TimeEntry firstTimeEntry = timeEntryRepository.findByFeName("Sample feName 1").get(0);
 		Long firstTimeEntryId = firstTimeEntry.getTimeEntryId();
-		TimeEntry resultFromFindOne = timeEntryRepository.findOne(firstTimeEntryId);
-		TestCase.assertEquals(
-				firstTimeEntry.getTimeEntryId(), 
-				resultFromFindOne.getTimeEntryId());
-		TestCase.assertEquals(
-				firstTimeEntry.getFeName(),
-				resultFromFindOne.getFeName());
-		TestCase.assertEquals(
-				firstTimeEntry.getAccountName(), 
-				resultFromFindOne.getAccountName());
-		TestCase.assertEquals(
-				firstTimeEntry.getDate(), 
-				resultFromFindOne.getDate());
-		TestCase.assertEquals(
-				firstTimeEntry.getHours(), 
-				resultFromFindOne.getHours());
-		
+		TimeEntry resultFromFindOne = timeEntryRepository.getOne(firstTimeEntryId);
+		assertThat(firstTimeEntry.getTimeEntryId()).isEqualTo(resultFromFindOne.getTimeEntryId());
+		assertThat(firstTimeEntry.getFeName()).isEqualTo(resultFromFindOne.getFeName());
+		assertThat(firstTimeEntry.getAccountName()).isEqualTo(resultFromFindOne.getAccountName());
+		assertThat(firstTimeEntry.getDate()).isEqualTo(resultFromFindOne.getDate());
+		assertThat(firstTimeEntry.getHours()).isEqualTo(resultFromFindOne.getHours());
 	}
 
 	/**
@@ -139,13 +112,12 @@ public class TimeEntryRepositoryTests {
 	public void testSaveExistingReply() {
 		
 		final String newFeName = "Testing changed name.";
-		TimeEntry firstTimeEntry = timeEntryRepository.findAll().iterator().next();
+		TimeEntry firstTimeEntry = timeEntryRepository.findByFeName("Sample feName 1").get(0);
 		Long timeEntryIdToFind = firstTimeEntry.getTimeEntryId();
 		firstTimeEntry.setFeName(newFeName);
 		timeEntryRepository.save(firstTimeEntry);
-		TimeEntry savedTimeEntry = timeEntryRepository.findOne(timeEntryIdToFind);
-		TestCase.assertEquals(newFeName, savedTimeEntry.getFeName());
-		
+		TimeEntry savedTimeEntry = timeEntryRepository.getOne(timeEntryIdToFind);
+		assertThat(newFeName).isEqualTo(savedTimeEntry.getFeName());
 	}
 	
 	/**
@@ -163,15 +135,11 @@ public class TimeEntryRepositoryTests {
 		final Double newHours = 1.5d;
 		TimeEntry newTimeEntry = new TimeEntry(newFeName, newAccountName, newDate, newHours);
 		newTimeEntry = timeEntryRepository.save(newTimeEntry);
-		TimeEntry savedTimeEntry = 
-				timeEntryRepository.findOne(newTimeEntry.getTimeEntryId());
-		TestCase.assertEquals(
-				newFeName, savedTimeEntry.getFeName());
-		TestCase.assertEquals(
-				newAccountName, savedTimeEntry.getAccountName());
-		TestCase.assertEquals(newDate.toString(), savedTimeEntry.getDate().toString());
-		TestCase.assertEquals(newHours, savedTimeEntry.getHours());
-		
+		TimeEntry savedTimeEntry = timeEntryRepository.getOne(newTimeEntry.getTimeEntryId());
+		assertThat(newFeName).isEqualTo(savedTimeEntry.getFeName());
+		assertThat(newAccountName).isEqualTo(savedTimeEntry.getAccountName());
+		assertThat(newDate).isEqualTo(savedTimeEntry.getDate());
+		assertThat(newHours).isEqualTo(savedTimeEntry.getHours());
 	}
 	
 	/**
@@ -191,9 +159,8 @@ public class TimeEntryRepositoryTests {
 		timeEntry.setFeName(null);
 		try {
 			timeEntryRepository.save(timeEntry);
-			TestCase.fail("Shouldn't be able to save a TimeEntry with a null feName.");
-		} catch (DataIntegrityViolationException dive) {
-			//We should throw an exception.  Nothing to do.
+		} catch (Exception e) {
+			assertThatExceptionOfType(DataIntegrityViolationException.class).isThrownBy(() -> timeEntryRepository.save(timeEntry));
 		}
 	}
 
@@ -214,9 +181,8 @@ public class TimeEntryRepositoryTests {
 		timeEntry.setAccountName(null);
 		try {
 			timeEntryRepository.save(timeEntry);
-			TestCase.fail("Shouldn't be able to save a TimeEntry with a null accountName.");
-		} catch (DataIntegrityViolationException dive) {
-			//We should throw an exception.  Nothing to do.
+		} catch (Exception e) {
+			assertThatExceptionOfType(DataIntegrityViolationException.class).isThrownBy(() -> timeEntryRepository.save(timeEntry));
 		}
 	}
 
@@ -237,9 +203,8 @@ public class TimeEntryRepositoryTests {
 		timeEntry.setDate(null);
 		try {
 			timeEntryRepository.save(timeEntry);
-			TestCase.fail("Shouldn't be able to save a TimeEntry with a null date.");
-		} catch (DataIntegrityViolationException dive) {
-			//We should throw an exception.  Nothing to do.
+		} catch (Exception e) {
+			assertThatExceptionOfType(DataIntegrityViolationException.class).isThrownBy(() -> timeEntryRepository.save(timeEntry));
 		}
 	}
 	
@@ -260,9 +225,8 @@ public class TimeEntryRepositoryTests {
 		timeEntry.setHours(null);
 		try {
 			timeEntryRepository.save(timeEntry);
-			TestCase.fail("Shouldn't be able to save a TimeEntry with a null hours.");
-		} catch (DataIntegrityViolationException dive) {
-			//We should throw an exception.  Nothing to do.
+		} catch (Exception e) {
+			assertThatExceptionOfType(DataIntegrityViolationException.class).isThrownBy(() -> timeEntryRepository.save(timeEntry));
 		}
 	}
 	/**
@@ -277,10 +241,11 @@ public class TimeEntryRepositoryTests {
 		TimeEntry timeEntry = timeEntryRepository.findAll().iterator().next();
 		Long timeEntryId = timeEntry.getTimeEntryId();
 		timeEntryRepository.delete(timeEntry);
-		TimeEntry deletedTimeEntry = timeEntryRepository.findOne(timeEntryId);
-		TestCase.assertNull(deletedTimeEntry);
-		
+		try {
+			TimeEntry deletedTimeEntry = timeEntryRepository.getOne(timeEntryId);
+		} catch (Exception e) {
+			assertThatExceptionOfType(JpaObjectRetrievalFailureException.class).isThrownBy(() -> timeEntryRepository.getOne(timeEntryId)).withMessageContaining("Unable to find io.pivotal.timetracking.domain.TimeEntry with id "+timeEntryId);
+		}
 	}
-	
-	
+
 }

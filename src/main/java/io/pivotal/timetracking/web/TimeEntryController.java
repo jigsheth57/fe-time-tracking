@@ -55,7 +55,7 @@ public class TimeEntryController {
 	@RequestMapping(value="/{timeEntryId}", method=RequestMethod.GET)
 	public @ResponseBody TimeEntry getTimeEntry(@PathVariable Long timeEntryId) {
 		
-		TimeEntry timeEntry = timeEntryRepository.findOne(timeEntryId);
+		TimeEntry timeEntry = timeEntryRepository.getOne(timeEntryId);
 		log.debug(String.format("Found time entry for id %d: [%s]",
 				timeEntryId, timeEntry));
 		return timeEntry;
@@ -84,7 +84,7 @@ public class TimeEntryController {
 	public void deleteTimeEntry(@PathVariable Long timeEntryId) {
 		
 		log.debug(String.format("Deleting time entry for id %d.", timeEntryId));
-		timeEntryRepository.delete(timeEntryId);
+		timeEntryRepository.deleteById(timeEntryId);
 	}
 	
 

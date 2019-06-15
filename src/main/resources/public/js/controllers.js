@@ -18,7 +18,7 @@ timeEntryApp.controller('EntryListController', function($scope, $sessionStorage,
 	//Handles the delete request function
 	$scope.delete = function(entryId) {
 		console.log("deleting id " + entryId);
-		$http.delete("/entries/" + entryId).success(function(data, status, headers, config) {
+		$http.delete("/timeentries/" + entryId).success(function(data, status, headers, config) {
 			$scope.getEntries();
 			$scope.message = "Successfully deleted the entry.";
 			$scope.error = ""
@@ -30,11 +30,9 @@ timeEntryApp.controller('EntryListController', function($scope, $sessionStorage,
 	
 	//Reloads the data
 	$scope.getEntries = function() {
-		$http.get('/entries/').success(function(data) {
+		$http.get('/timeentries/').success(function(data) {
 			console.log("response data: "+JSON.stringify(data));
-			//console.log("employees data: "+data._embedded);
-			//console.log("employees response data: "+JSON.stringify(data._embedded));
-			$scope.entries = data;
+			$scope.entries = data._embedded.timeentries;
 		})
 	};
 
@@ -66,7 +64,8 @@ timeEntryApp.controller('EditEntryController', function($scope, $http, $routePar
 	
 	//Handles the update request function
 	$scope.update = function(entry) {
-		$http.post("/entries/", entry).success(function(data, status, headers, config) {
+		console.log("entry data: "+JSON.stringify(entry));
+		$http.post("/timeentries/", entry).success(function(data, status, headers, config) {
 			$scope.entry = data;
 			$scope.message = "Successfully saved the entry.";
 			$scope.error = "";
@@ -78,7 +77,8 @@ timeEntryApp.controller('EditEntryController', function($scope, $http, $routePar
 	
 	//Handles the reset request function and the initial load of the entry
 	$scope.reset = function(entry) {
-		$http.get('/entries/' + $routeParams.entryId).success(function(data) {
+		$http.get('/timeentries/' + $routeParams.entryId).success(function(data) {
+			console.log("response data: "+JSON.stringify(data));
 			$scope.entry = data;
 			$scope.message = "";
 			$scope.error = "";

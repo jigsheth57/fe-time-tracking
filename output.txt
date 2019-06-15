@@ -1,0 +1,3221 @@
+REQUEST: [2019-06-07T09:15:46-05:00]
+GET / HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:46-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1040
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:46 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: a374e1be-e3cd-4832-7c88-f9aab8f4828e::2e9be8db-521d-404a-818f-6077945c993c
+{
+  "links": {
+    "app_ssh": {
+      "href": "ssh.sys.aws.pcfapps.org:2222",
+      "meta": {
+        "host_key_fingerprint": "43:d3:36:66:18:c4:cb:37:be:11:c7:96:2e:42:20:f8",
+        "oauth_client": "ssh-proxy"
+      }
+    },
+    "cloud_controller_v2": {
+      "href": "https://api.sys.aws.pcfapps.org/v2",
+      "meta": {
+        "version": "2.125.0"
+      }
+    },
+    "cloud_controller_v3": {
+      "href": "https://api.sys.aws.pcfapps.org/v3",
+      "meta": {
+        "version": "3.60.0"
+      }
+    },
+    "credhub": null,
+    "logging": {
+      "href": "wss://doppler.sys.aws.pcfapps.org:4443"
+    },
+    "network_policy_v0": {
+      "href": "https://api.sys.aws.pcfapps.org/networking/v0/external"
+    },
+    "network_policy_v1": {
+      "href": "https://api.sys.aws.pcfapps.org/networking/v1/external"
+    },
+    "routing": {
+      "href": "https://api.sys.aws.pcfapps.org/routing"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org"
+    },
+    "uaa": {
+      "href": "https://uaa.sys.aws.pcfapps.org"
+    }
+  }
+}
+
+
+REQUEST: [2019-06-07T09:15:46-05:00]
+GET /v3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:46-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1116
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:46 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006179
+X-Vcap-Request-Id: 2fd427b5-7a64-46af-5b77-2c4309a486c7::19c66d4b-42af-4d8c-8381-2b8512ff573a
+X-Xss-Protection: 1; mode=block
+{
+  "links": {
+    "apps": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps"
+    },
+    "builds": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds"
+    },
+    "deployments": {
+      "experimental": true,
+      "href": "https://api.sys.aws.pcfapps.org/v3/deployments"
+    },
+    "droplets": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/droplets"
+    },
+    "isolation_segments": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/isolation_segments"
+    },
+    "organizations": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/organizations"
+    },
+    "packages": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages"
+    },
+    "processes": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/processes"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3"
+    },
+    "service_instances": {
+      "experimental": true,
+      "href": "https://api.sys.aws.pcfapps.org/v3/service_instances"
+    },
+    "spaces": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/spaces"
+    },
+    "tasks": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/tasks"
+    }
+  }
+}
+
+
+REQUEST: [2019-06-07T09:15:46-05:00]
+GET /login HTTP/1.1
+Host: uaa.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Connection: close
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:47-05:00]
+HTTP/1.1 200 OK
+Cache-Control: no-store
+Content-Language: en-US
+Content-Length: 342
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 07 Jun 2019 14:15:47 GMT
+Set-Cookie: X-Uaa-Csrf=KReMiAo1B16g43dswk3hoM; Max-Age=86400; Expires=Sat, 08-Jun-2019 14:15:47 GMT; Path=/; Secure; HttpOnly
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Vcap-Request-Id: b8a4a01f-200b-4a99-50db-cce6855a5fe1
+X-Xss-Protection: 1; mode=block
+{
+  "app": {
+    "version": "4.24.0"
+  },
+  "commit_id": "16d9900",
+  "entityID": "http://login.sys.aws.pcfapps.org",
+  "idpDefinitions": {},
+  "links": {
+    "login": "https://login.sys.aws.pcfapps.org",
+    "uaa": "https://uaa.sys.aws.pcfapps.org"
+  },
+  "prompts": {
+    "password": "[PRIVATE DATA HIDDEN]",
+    "username": [
+      "text",
+      "Email"
+    ]
+  },
+  "timestamp": "2018-11-06T01:20:26+0000",
+  "zone_name": "uaa"
+}
+
+
+REQUEST: [2019-06-07T09:15:47-05:00]
+GET /v2/info HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:47-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 714
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:47 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 3f9e9e8b-2f13-4e93-41f1-4069346a67fb::a50f1d65-8761-48ff-9f1f-cc7436b4118c
+{
+  "api_version": "2.125.0",
+  "app_ssh_endpoint": "ssh.sys.aws.pcfapps.org:2222",
+  "app_ssh_host_key_fingerprint": "43:d3:36:66:18:c4:cb:37:be:11:c7:96:2e:42:20:f8",
+  "app_ssh_oauth_client": "ssh-proxy",
+  "authorization_endpoint": "https://login.sys.aws.pcfapps.org",
+  "build": "2.4.6-build.5",
+  "description": "https://docs.pivotal.io/pivotalcf/2-3/pcf-release-notes/runtime-rn.html",
+  "doppler_logging_endpoint": "wss://doppler.sys.aws.pcfapps.org:4443",
+  "min_cli_version": "6.23.0",
+  "min_recommended_cli_version": "6.23.0",
+  "name": "Small Footprint PAS",
+  "osbapi_version": "2.14",
+  "routing_endpoint": "https://api.sys.aws.pcfapps.org/routing",
+  "support": "https://support.pivotal.io",
+  "token_endpoint": "https://uaa.sys.aws.pcfapps.org",
+  "version": 0
+}
+
+
+REQUEST: [2019-06-07T09:15:47-05:00]
+GET /login HTTP/1.1
+Host: login.sys.aws.pcfapps.org
+Accept: application/json
+Connection: close
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:47-05:00]
+HTTP/1.1 200 OK
+Cache-Control: no-store
+Content-Language: en-US
+Content-Length: 342
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 07 Jun 2019 14:15:47 GMT
+Set-Cookie: X-Uaa-Csrf=oWfUGoC0KIzM1GA6wIWiE9; Max-Age=86400; Expires=Sat, 08-Jun-2019 14:15:47 GMT; Path=/; Secure; HttpOnly
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Vcap-Request-Id: 735a976f-81aa-44a4-51c8-7ff085d17dbd
+X-Xss-Protection: 1; mode=block
+{
+  "app": {
+    "version": "4.24.0"
+  },
+  "commit_id": "16d9900",
+  "entityID": "http://login.sys.aws.pcfapps.org",
+  "idpDefinitions": {},
+  "links": {
+    "login": "https://login.sys.aws.pcfapps.org",
+    "uaa": "https://uaa.sys.aws.pcfapps.org"
+  },
+  "prompts": {
+    "password": "[PRIVATE DATA HIDDEN]",
+    "username": [
+      "text",
+      "Email"
+    ]
+  },
+  "timestamp": "2018-11-06T01:20:26+0000",
+  "zone_name": "uaa"
+}
+
+
+REQUEST: [2019-06-07T09:15:47-05:00]
+GET /v3/apps?names=timetracking&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:47-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 462
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:47 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.003663
+X-Vcap-Request-Id: 79ec779a-5ab9-43da-5cf7-ce1883db71fe::dc067cb6-90c8-45fc-bfc4-636f62f18a06
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 0
+  },
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:15:47-05:00]
+POST /v3/apps HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Content-Type: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+{
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "name": "timetracking",
+  "relationships": {
+    "space": {
+      "data": {
+        "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+      }
+    }
+  }
+}
+
+
+RESPONSE: [2019-06-07T09:15:47-05:00]
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 1955
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:47 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.032503
+X-Vcap-Request-Id: ab991f8e-ea47-4f4d-74c8-021879cb08e5::479c343b-b70b-4abe-b187-63e69935bf49
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:15:47Z",
+  "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "current_droplet": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+    },
+    "droplets": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets"
+    },
+    "environment_variables": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/environment_variables"
+    },
+    "packages": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/packages"
+    },
+    "processes": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes"
+    },
+    "route_mappings": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/route_mappings"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "space": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "start": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/start",
+      "method": "POST"
+    },
+    "stop": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/stop",
+      "method": "POST"
+    },
+    "tasks": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/tasks"
+    }
+  },
+  "name": "timetracking",
+  "relationships": {
+    "space": {
+      "data": {
+        "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+      }
+    }
+  },
+  "state": "STOPPED",
+  "updated_at": "2019-06-07T14:15:47Z"
+}
+
+
+Creating app timetracking in org Central / space development as admin...
+OK
+
+Uploading and creating bits package for app timetracking in org Central / space development as admin...
+REQUEST: [2019-06-07T09:15:47-05:00]
+GET /v3/apps?names=timetracking&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:15:47-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2657
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:47 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006091
+X-Vcap-Request-Id: 23137cd2-3691-43dd-634f-5655076025aa::8b7b8d71-8708-4278-8834-f9bf7d65c487
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 1
+  },
+  "resources": [
+    {
+      "created_at": "2019-06-07T14:15:47Z",
+      "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+      "lifecycle": {
+        "data": {
+          "buildpacks": [
+            "java_buildpack_offline"
+          ],
+          "stack": "cflinuxfs3"
+        },
+        "type": "buildpack"
+      },
+      "links": {
+        "current_droplet": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+        },
+        "droplets": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets"
+        },
+        "environment_variables": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/environment_variables"
+        },
+        "packages": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/packages"
+        },
+        "processes": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes"
+        },
+        "route_mappings": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/route_mappings"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "start": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/start",
+          "method": "POST"
+        },
+        "stop": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/stop",
+          "method": "POST"
+        },
+        "tasks": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/tasks"
+        }
+      },
+      "name": "timetracking",
+      "relationships": {
+        "space": {
+          "data": {
+            "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+          }
+        }
+      },
+      "state": "STOPPED",
+      "updated_at": "2019-06-07T14:15:47Z"
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:15:49-05:00]
+POST /v3/packages HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Content-Type: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+{
+  "relationships": {
+    "app": {
+      "data": {
+        "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+      }
+    }
+  },
+  "type": "bits"
+}
+
+
+RESPONSE: [2019-06-07T09:15:49-05:00]
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 837
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:15:49 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.011286
+X-Vcap-Request-Id: cd656201-4698-43ed-5120-ea330774a8ff::fc8730e1-8916-4625-9d53-c938dd00a845
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:15:49Z",
+  "data": {
+    "checksum": {
+      "type": "sha256",
+      "value": null
+    },
+    "error": null
+  },
+  "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517",
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "download": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/download",
+      "method": "GET"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517"
+    },
+    "upload": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/upload",
+      "method": "POST"
+    }
+  },
+  "state": "AWAITING_UPLOAD",
+  "type": "bits",
+  "updated_at": "2019-06-07T14:15:49Z"
+}
+
+
+REQUEST: [2019-06-07T09:15:49-05:00]
+POST /v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/upload HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Content-Type: multipart/form-data; boundary=51b9989b83cc03b59bee2dfd60cf5b0df6371c8462815795afffb247a669
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+[multipart/form-data Content Hidden]
+
+RESPONSE: [2019-06-07T09:16:07-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 839
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:07 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.014786
+X-Vcap-Request-Id: 70bc0c7f-a58a-4c32-5b0f-96ea809b6fd8::04a10012-d472-4a77-b714-b4c9a6d03d83
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:15:49Z",
+  "data": {
+    "checksum": {
+      "type": "sha256",
+      "value": null
+    },
+    "error": null
+  },
+  "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517",
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "download": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/download",
+      "method": "GET"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517"
+    },
+    "upload": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/upload",
+      "method": "POST"
+    }
+  },
+  "state": "PROCESSING_UPLOAD",
+  "type": "bits",
+  "updated_at": "2019-06-07T14:16:07Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:10-05:00]
+GET /v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:10-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 839
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:10 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.004559
+X-Vcap-Request-Id: c4622b90-9ace-4643-5cd1-0d5ec46f27e4::5ad84951-f3b7-4e2a-b75d-891618655144
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:15:49Z",
+  "data": {
+    "checksum": {
+      "type": "sha256",
+      "value": null
+    },
+    "error": null
+  },
+  "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517",
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "download": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/download",
+      "method": "GET"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517"
+    },
+    "upload": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/upload",
+      "method": "POST"
+    }
+  },
+  "state": "PROCESSING_UPLOAD",
+  "type": "bits",
+  "updated_at": "2019-06-07T14:16:07Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:13-05:00]
+GET /v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:13-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 889
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:13 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.003708
+X-Vcap-Request-Id: b4b8c093-cb97-4d89-42f5-303d97096698::e279727e-79b6-4e80-bd4a-05a0a60afca6
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:15:49Z",
+  "data": {
+    "checksum": {
+      "type": "sha256",
+      "value": "6bcb4b3d98ce8330facf8f56994e61303a2ce3029bc7ed0fd1cfcb707899fb48"
+    },
+    "error": null
+  },
+  "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517",
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "download": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/download",
+      "method": "GET"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517"
+    },
+    "upload": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517/upload",
+      "method": "POST"
+    }
+  },
+  "state": "READY",
+  "type": "bits",
+  "updated_at": "2019-06-07T14:16:13Z"
+}
+
+
+OK
+
+Staging package for app timetracking in org Central / space development as admin...
+REQUEST: [2019-06-07T09:16:13-05:00]
+GET /v3/apps?names=timetracking&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:14-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2657
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:14 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006492
+X-Vcap-Request-Id: eea8b67c-86e5-4753-4237-84f423eb200a::bab8fa72-9a5b-419d-a3db-bc1b6962b560
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 1
+  },
+  "resources": [
+    {
+      "created_at": "2019-06-07T14:15:47Z",
+      "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+      "lifecycle": {
+        "data": {
+          "buildpacks": [
+            "java_buildpack_offline"
+          ],
+          "stack": "cflinuxfs3"
+        },
+        "type": "buildpack"
+      },
+      "links": {
+        "current_droplet": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+        },
+        "droplets": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets"
+        },
+        "environment_variables": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/environment_variables"
+        },
+        "packages": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/packages"
+        },
+        "processes": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes"
+        },
+        "route_mappings": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/route_mappings"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "start": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/start",
+          "method": "POST"
+        },
+        "stop": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/stop",
+          "method": "POST"
+        },
+        "tasks": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/tasks"
+        }
+      },
+      "name": "timetracking",
+      "relationships": {
+        "space": {
+          "data": {
+            "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+          }
+        }
+      },
+      "state": "STOPPED",
+      "updated_at": "2019-06-07T14:15:47Z"
+    }
+  ]
+}
+
+
+WEBSOCKET REQUEST: [2019-06-07T09:16:14-05:00]
+GET /apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stream HTTP/1.1
+Host: wss://doppler.sys.aws.pcfapps.org:4443
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Key: [HIDDEN]
+Origin: wss://doppler.sys.aws.pcfapps.org:4443
+Authorization: [PRIVATE DATA HIDDEN]
+
+
+WEBSOCKET RESPONSE: [2019-06-07T09:16:14-05:00]
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-Websocket-Accept: DECk7a3iXidFPGEJO47D8itd/uQ=
+
+
+REQUEST: [2019-06-07T09:16:14-05:00]
+POST /v3/builds HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Content-Type: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+{
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  }
+}
+
+
+RESPONSE: [2019-06-07T09:16:14-05:00]
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:14 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.382412
+X-Vcap-Request-Id: 3f70cb02-9800-4b0f-701e-4c5f44405b7b::3cbeedcd-df1a-4925-80e7-765a4a700900
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:14-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:14-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:14 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.005978
+X-Vcap-Request-Id: c17e2c84-c3fe-4514-6f6f-a13585e45dbc::17850690-9deb-40ac-947a-684610424985
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+   Downloading java_buildpack_offline...
+   Downloaded java_buildpack_offline
+   Cell dfcd06c5-e454-4ae1-9398-9889a8b5b3b5 creating container for instance 6f8de47c-bb87-4d46-890e-8d55c33a69b3
+   Cell dfcd06c5-e454-4ae1-9398-9889a8b5b3b5 successfully created container for instance 6f8de47c-bb87-4d46-890e-8d55c33a69b3
+   Downloading app package...
+REQUEST: [2019-06-07T09:16:17-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:17-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:17 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.005818
+X-Vcap-Request-Id: 8445d5f3-c98f-46bc-7568-63b85570c320::28693ca7-9b0b-46de-815c-e88eb1b6919e
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+   Downloaded app package (35.7M)
+   [1m[31m----->[0m[22m [1m[34mJava Buildpack[0m[22m [34mv4.18[0m [34m(offline)[0m | https://github.com/cloudfoundry/java-buildpack.git#a0df7d0
+   [1m[31m----->[0m[22m Downloading [1m[34mJvmkill Agent[0m[22m [34m1.16.0_RELEASE[0m from https://java-buildpack.cloudfoundry.org/jvmkill/bionic/x86_64/jvmkill-1.16.0_RELEASE.so [3m[32m(found in cache)[0m[23m
+   [1m[31m----->[0m[22m Downloading [1m[34mOpen Jdk JRE[0m[22m [34m1.8.0_202[0m from https://java-buildpack.cloudfoundry.org/openjdk/bionic/x86_64/openjdk-1.8.0_202.tar.gz [3m[32m(found in cache)[0m[23m
+REQUEST: [2019-06-07T09:16:20-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+          Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre [3m[32m(1.1s)[0m[23m
+          JVM DNS caching disabled in lieu of BOSH DNS caching
+   [1m[31m----->[0m[22m Downloading [1m[34mOpen JDK Like Memory Calculator[0m[22m [34m3.13.0_RELEASE[0m from https://java-buildpack.cloudfoundry.org/memory-calculator/bionic/x86_64/memory-calculator-3.13.0_RELEASE.tar.gz [3m[32m(found in cache)[0m[23m
+RESPONSE: [2019-06-07T09:16:20-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:20 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.005826
+X-Vcap-Request-Id: 431f95d7-c252-4d28-70a2-1123b74440ec::ff4ca004-31ce-4e3a-a037-d6c98d351b72
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+          Loaded Classes: 18383, Threads: 250
+   [1m[31m----->[0m[22m Downloading [1m[34mClient Certificate Mapper[0m[22m [34m1.8.0_RELEASE[0m from https://java-buildpack.cloudfoundry.org/client-certificate-mapper/client-certificate-mapper-1.8.0_RELEASE.jar [3m[32m(found in cache)[0m[23m
+   [1m[31m----->[0m[22m Downloading [1m[34mContainer Security Provider[0m[22m [34m1.16.0_RELEASE[0m from https://java-buildpack.cloudfoundry.org/container-security-provider/container-security-provider-1.16.0_RELEASE.jar [3m[32m(found in cache)[0m[23m
+   [1m[31m----->[0m[22m Downloading [1m[34mSpring Auto Reconfiguration[0m[22m [34m2.7.0_RELEASE[0m from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-2.7.0_RELEASE.jar [3m[32m(found in cache)[0m[23m
+REQUEST: [2019-06-07T09:16:23-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:23-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:23 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.005727
+X-Vcap-Request-Id: 601ba44d-01d4-4453-5441-aa48f91a69c2::923b8752-58d9-45e1-85a6-96bcece3256d
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:26-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:27-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:27 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.005841
+X-Vcap-Request-Id: c649d6ec-56d5-42cb-43dd-0e5288f4d103::a675baac-33d6-4792-858f-e608711de591
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:30-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:30-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:30 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006103
+X-Vcap-Request-Id: 9fb280d7-2b69-4f77-543e-24e3c625fb5b::fbfc6d87-0313-444f-b677-4c8a58255fed
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+   Exit status 0
+   Uploading droplet, build artifacts cache...
+   Uploading droplet...
+   Uploading build artifacts cache...
+   Uploaded build artifacts cache (130B)
+REQUEST: [2019-06-07T09:16:33-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:33-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:33 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.005779
+X-Vcap-Request-Id: c269cf9a-6a1d-461f-595e-b65ef2e08f29::d890a00b-7190-4c29-a2b7-008498cf6d6a
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:36-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:36-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:36 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006557
+X-Vcap-Request-Id: 34f9e5ad-e70e-4379-7624-3031f7b0929e::b3d2a607-693f-456f-a31a-bf2e7f96644f
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+REQUEST: [2019-06-07T09:16:39-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:39-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 783
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006051
+X-Vcap-Request-Id: 1ff7ae2a-8315-4027-7a7b-252f5d2ea735::c59f05d5-9a87-4fc4-8749-52377e8434ba
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": null,
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGING",
+  "updated_at": "2019-06-07T14:16:14Z"
+}
+
+
+   Uploaded droplet (84.1M)
+   Uploading complete
+   Cell dfcd06c5-e454-4ae1-9398-9889a8b5b3b5 stopping instance 6f8de47c-bb87-4d46-890e-8d55c33a69b3
+   Cell dfcd06c5-e454-4ae1-9398-9889a8b5b3b5 destroying container for instance 6f8de47c-bb87-4d46-890e-8d55c33a69b3
+   Cell dfcd06c5-e454-4ae1-9398-9889a8b5b3b5 successfully destroyed container for instance 6f8de47c-bb87-4d46-890e-8d55c33a69b3
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 930
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.006034
+X-Vcap-Request-Id: 1da1c4c0-5029-4464-73e0-0c5676762a16::262baab6-0190-45ee-9674-84a432992313
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:16:14Z",
+  "created_by": {
+    "email": "admin",
+    "guid": "4d919ba1-7dce-4945-a3ce-394cd546dc87",
+    "name": "admin"
+  },
+  "droplet": {
+    "guid": "2643826a-1395-4547-bc26-5bcb0a7e82d9",
+    "href": "https://api.sys.aws.pcfapps.org/v3/droplets/2643826a-1395-4547-bc26-5bcb0a7e82d9"
+  },
+  "error": null,
+  "guid": "6f8de47c-bb87-4d46-890e-8d55c33a69b3",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/builds/6f8de47c-bb87-4d46-890e-8d55c33a69b3"
+    }
+  },
+  "package": {
+    "guid": "9a86e9e0-bdd6-4084-8b35-231cbced6517"
+  },
+  "state": "STAGED",
+  "updated_at": "2019-06-07T14:16:40Z"
+}
+
+
+OK
+
+Mapping routes...
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v2/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/routes HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 107
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 5ff7342d-6f65-4d68-63c1-387a4e7a41f9::34fb6359-7a43-4c8a-8159-0e579a583aa4
+{
+  "next_url": null,
+  "prev_url": null,
+  "resources": null,
+  "total_pages": 1,
+  "total_results": 0
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v2/shared_domains HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 949
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: a40f8d41-fc45-40fa-43f3-4e008d1a10af::7006c167-fd43-403b-b8b7-e21bf9fcc99b
+{
+  "next_url": null,
+  "prev_url": null,
+  "resources": [
+    {
+      "entity": {
+        "internal": false,
+        "name": "cfapps.aws.pcfapps.org",
+        "router_group_guid": null,
+        "router_group_type": null
+      },
+      "metadata": {
+        "created_at": "2019-05-08T16:43:21Z",
+        "guid": "e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+        "updated_at": "2019-06-07T12:40:10Z",
+        "url": "/v2/shared_domains/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce"
+      }
+    },
+    {
+      "entity": {
+        "internal": true,
+        "name": "apps.internal",
+        "router_group_guid": null,
+        "router_group_type": null
+      },
+      "metadata": {
+        "created_at": "2019-05-08T16:43:21Z",
+        "guid": "7ba45541-21ac-4ad6-8563-e4655d798373",
+        "updated_at": "2019-06-07T12:40:10Z",
+        "url": "/v2/shared_domains/7ba45541-21ac-4ad6-8563-e4655d798373"
+      }
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 2
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v2/organizations/6c46ec5d-5ab2-4a29-9ed6-4f502bc37c56/private_domains HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 107
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: e06e9786-be1d-4b3b-62a7-572a73217b4b::50ee0f85-c5ef-4d95-ac57-0f7bccd72ff6
+{
+  "next_url": null,
+  "prev_url": null,
+  "resources": null,
+  "total_pages": 1,
+  "total_results": 0
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v2/routes?q=domain_guid%3Ae3d71087-4934-4e2a-a0d0-19b2f9f9b0ce&q=host%3Atimetracking&q=path%3A HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 107
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: a2fb6bae-6744-4f37-7872-37d61e6fcc53::20c5a3ea-2052-4e76-b3b3-8557005358a7
+{
+  "next_url": null,
+  "prev_url": null,
+  "resources": null,
+  "total_pages": 1,
+  "total_results": 0
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v2/routes/reserved/domain/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce?host=timetracking HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 86
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 4aaee2c0-0cad-47ed-541f-63205e34e150::e4c7bc8c-2c45-4fa7-9462-0e07e03045b7
+{
+  "code": 10000,
+  "description": "Unknown request",
+  "error_code": "CF-NotFound"
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+POST /v2/routes HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Content-Type: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+{
+  "domain_guid": "e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+  "host": "timetracking",
+  "port": null,
+  "space_guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+}
+
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 761
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Location: /v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 81a60959-e2c4-47fa-4632-a29eb5331155::93666b18-702b-48aa-ac83-ac3de22a88ba
+{
+  "entity": {
+    "apps_url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/apps",
+    "domain_guid": "e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+    "domain_url": "/v2/shared_domains/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+    "host": "timetracking",
+    "path": "",
+    "port": null,
+    "route_mappings_url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/route_mappings",
+    "service_instance_guid": null,
+    "space_guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc",
+    "space_url": "/v2/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+  },
+  "metadata": {
+    "created_at": "2019-06-07T14:16:42Z",
+    "guid": "c3bf5f3a-8080-4010-b838-5b131efd670b",
+    "updated_at": "2019-06-07T14:16:42Z",
+    "url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b"
+  }
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+PUT /v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5 HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 761
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: b58c96a4-3149-43b8-6c78-aa8a9696184b::dd1c7a1f-83d4-4e6d-9995-356ba13ed4d0
+{
+  "entity": {
+    "apps_url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/apps",
+    "domain_guid": "e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+    "domain_url": "/v2/shared_domains/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+    "host": "timetracking",
+    "path": "",
+    "port": null,
+    "route_mappings_url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/route_mappings",
+    "service_instance_guid": null,
+    "space_guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc",
+    "space_url": "/v2/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+  },
+  "metadata": {
+    "created_at": "2019-06-07T14:16:42Z",
+    "guid": "c3bf5f3a-8080-4010-b838-5b131efd670b",
+    "updated_at": "2019-06-07T14:16:42Z",
+    "url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b"
+  }
+}
+
+
+OK
+
+Setting app timetracking to droplet 2643826a-1395-4547-bc26-5bcb0a7e82d9 in org Central / space development as admin...
+REQUEST: [2019-06-07T09:16:42-05:00]
+GET /v3/apps?names=timetracking&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2657
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.008378
+X-Vcap-Request-Id: c6617b28-2589-4e9c-4217-68491b3877b6::77361c89-3470-47e0-8aee-c3334c4d950d
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 1
+  },
+  "resources": [
+    {
+      "created_at": "2019-06-07T14:15:47Z",
+      "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+      "lifecycle": {
+        "data": {
+          "buildpacks": [
+            "java_buildpack_offline"
+          ],
+          "stack": "cflinuxfs3"
+        },
+        "type": "buildpack"
+      },
+      "links": {
+        "current_droplet": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+        },
+        "droplets": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets"
+        },
+        "environment_variables": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/environment_variables"
+        },
+        "packages": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/packages"
+        },
+        "processes": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes"
+        },
+        "route_mappings": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/route_mappings"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "start": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/start",
+          "method": "POST"
+        },
+        "stop": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/stop",
+          "method": "POST"
+        },
+        "tasks": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/tasks"
+        }
+      },
+      "name": "timetracking",
+      "relationships": {
+        "space": {
+          "data": {
+            "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+          }
+        }
+      },
+      "state": "STOPPED",
+      "updated_at": "2019-06-07T14:16:32Z"
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:42-05:00]
+PATCH /v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/relationships/current_droplet HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+Content-Type: application/json
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+{
+  "data": {
+    "guid": "2643826a-1395-4547-bc26-5bcb0a7e82d9"
+  }
+}
+
+
+RESPONSE: [2019-06-07T09:16:42-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 365
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:42 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.030264
+X-Vcap-Request-Id: 677aba66-db4e-4e5a-45de-b2f6b0fc7e73::e8d11065-e684-4472-9a86-16fa8400d67c
+X-Xss-Protection: 1; mode=block
+{
+  "data": {
+    "guid": "2643826a-1395-4547-bc26-5bcb0a7e82d9"
+  },
+  "links": {
+    "related": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/relationships/current_droplet"
+    }
+  }
+}
+
+
+OK
+
+Starting app timetracking in org Central / space development as admin...
+REQUEST: [2019-06-07T09:16:42-05:00]
+POST /v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/restart HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:43-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 1955
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:43 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.154458
+X-Vcap-Request-Id: d3a90258-be11-4c08-7a0d-12575a3f2b99::8f5c7547-9c99-403e-879f-aa0dbd7f90fa
+X-Xss-Protection: 1; mode=block
+{
+  "created_at": "2019-06-07T14:15:47Z",
+  "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+  "lifecycle": {
+    "data": {
+      "buildpacks": [
+        "java_buildpack_offline"
+      ],
+      "stack": "cflinuxfs3"
+    },
+    "type": "buildpack"
+  },
+  "links": {
+    "current_droplet": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+    },
+    "droplets": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets"
+    },
+    "environment_variables": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/environment_variables"
+    },
+    "packages": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/packages"
+    },
+    "processes": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes"
+    },
+    "route_mappings": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/route_mappings"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "space": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "start": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/start",
+      "method": "POST"
+    },
+    "stop": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/stop",
+      "method": "POST"
+    },
+    "tasks": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/tasks"
+    }
+  },
+  "name": "timetracking",
+  "relationships": {
+    "space": {
+      "data": {
+        "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+      }
+    }
+  },
+  "state": "STARTED",
+  "updated_at": "2019-06-07T14:16:42Z"
+}
+
+
+OK
+
+Waiting for app to start...
+REQUEST: [2019-06-07T09:16:43-05:00]
+GET /v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:43-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2768
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:43 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.008776
+X-Vcap-Request-Id: 6d22fced-e3bb-4c27-6216-0d1c70935846::4b4806cb-3483-482f-82ee-fbb949276cf2
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes?page=1&per_page=50"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes?page=1&per_page=50"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 2
+  },
+  "resources": [
+    {
+      "command": "[PRIVATE DATA HIDDEN IN LISTS]",
+      "created_at": "2019-06-07T14:15:47Z",
+      "disk_in_mb": 1024,
+      "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+      "health_check": {
+        "data": {
+          "invocation_timeout": null,
+          "timeout": null
+        },
+        "type": "port"
+      },
+      "instances": 1,
+      "links": {
+        "app": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "scale": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/scale",
+          "method": "POST"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "stats": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats"
+        }
+      },
+      "memory_in_mb": 1024,
+      "type": "web",
+      "updated_at": "2019-06-07T14:16:42Z"
+    },
+    {
+      "command": "[PRIVATE DATA HIDDEN IN LISTS]",
+      "created_at": "2019-06-07T14:16:42Z",
+      "disk_in_mb": 1024,
+      "guid": "ace74cb7-8e1e-44cc-b85e-d7650f14635e",
+      "health_check": {
+        "data": {
+          "invocation_timeout": null,
+          "timeout": null
+        },
+        "type": "process"
+      },
+      "instances": 0,
+      "links": {
+        "app": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "scale": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/actions/scale",
+          "method": "POST"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "stats": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats"
+        }
+      },
+      "memory_in_mb": 1024,
+      "type": "task",
+      "updated_at": "2019-06-07T14:16:43Z"
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:43-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:43-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 444
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:43 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.032484
+X-Vcap-Request-Id: 43d93414-82b3-4bc8-5678-fe68e9c86b5b::03a1f50c-a6b8-485c-aae5-81e085c6e785
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 0,
+      "usage": {
+        "cpu": 0,
+        "disk": 0,
+        "mem": 0,
+        "time": "2019-06-07T14:16:43+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:43-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:43-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:43 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.023085
+X-Vcap-Request-Id: 56c0d6b5-cf0d-4a28-7115-24e0dac27be7::6ef97201-0326-4be9-8993-ad01a35405d4
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:16:46-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:46-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 444
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:46 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.045358
+X-Vcap-Request-Id: 84901bb3-22f6-4e97-59b2-41e03af72ab0::8520fbde-c59f-4193-a734-ac044b0ce87d
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 3,
+      "usage": {
+        "cpu": 0,
+        "disk": 0,
+        "mem": 0,
+        "time": "2019-06-07T14:16:46+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:46-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:46-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:46 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.022916
+X-Vcap-Request-Id: fe02d83d-554c-47c1-6e3b-d019ae7a7a54::ca2352fd-2281-4b26-97ff-f0cd7c5e3bc0
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:16:49-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:49-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 453
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:49 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.027240
+X-Vcap-Request-Id: c0599ee5-0c49-4884-6dc0-d2e5419b0677::13084d43-44c4-45a1-a36d-0f98812e477c
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 6,
+      "usage": {
+        "cpu": 0.0,
+        "disk": 8192,
+        "mem": 39718,
+        "time": "2019-06-07T14:16:49+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:49-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:49-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:49 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.025916
+X-Vcap-Request-Id: a37150d0-d639-4700-6b4e-675b48d3aca5::3d40b61e-f156-480c-baab-2d8b4c2c02fb
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:16:52-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:52-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 453
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:52 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.027542
+X-Vcap-Request-Id: 2340822f-3f9d-4c02-4180-92dbd4d5d890::704d6a87-7815-4651-9aad-8cf1fe88830b
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 9,
+      "usage": {
+        "cpu": 0.0,
+        "disk": 8192,
+        "mem": 39718,
+        "time": "2019-06-07T14:16:52+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:52-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:52-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:52 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.026023
+X-Vcap-Request-Id: a18b61c5-f955-424c-52be-74e50cfa7eb2::f5a68b2c-c799-4de4-8cf6-9e928b472343
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:16:55-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:55-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 454
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:55 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.027179
+X-Vcap-Request-Id: f320a5df-1ba0-4b2d-78d3-ba5406e097d7::f353e84e-2143-4f95-89d5-9e60421106a1
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 12,
+      "usage": {
+        "cpu": 0.0,
+        "disk": 8192,
+        "mem": 39718,
+        "time": "2019-06-07T14:16:55+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:55-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:56-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:55 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.028214
+X-Vcap-Request-Id: 9ebcb41e-75dc-4913-4577-ab7492515b25::4bfd980c-e515-4964-85f0-03fdf17a7571
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:16:59-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:59-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 454
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:59 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.027016
+X-Vcap-Request-Id: 41cfea1a-dfd3-43a9-705f-34f75fe0bb8c::cedba096-28de-4bd5-b05c-d4b42dd8d8d0
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 16,
+      "usage": {
+        "cpu": 0.0,
+        "disk": 8192,
+        "mem": 39718,
+        "time": "2019-06-07T14:16:59+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:16:59-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:16:59-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:16:59 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.025338
+X-Vcap-Request-Id: e652c1fa-6500-42bc-7f45-1df6ce5b0746::dd2b6da2-f92f-4017-84c2-77eafc628268
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:17:02-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:02-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 454
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:02 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.027393
+X-Vcap-Request-Id: fa49073d-41e5-4295-718f-7a654a87c0ea::91d6cfa1-f812-4948-8685-44a39453056d
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "",
+      "index": 0,
+      "instance_ports": null,
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "STARTING",
+      "type": "web",
+      "uptime": 19,
+      "usage": {
+        "cpu": 0.0,
+        "disk": 8192,
+        "mem": 39718,
+        "time": "2019-06-07T14:17:02+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:17:02-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:02-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:02 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.024641
+X-Vcap-Request-Id: 393ee6eb-cfc3-4b76-7cb3-c54dca6d2fa6::26616c5d-7d43-4a65-957d-44353cffb4a3
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 635
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.028310
+X-Vcap-Request-Id: ec8a28c8-9894-471a-71d2-e9fe96e0908f::f5423cbf-d9d9-4865-8f58-50d0b4c34eb8
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "10.0.5.8",
+      "index": 0,
+      "instance_ports": [
+        {
+          "external": 61017,
+          "internal": 8080
+        },
+        {
+          "external": 61020,
+          "internal": 2222
+        }
+      ],
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "RUNNING",
+      "type": "web",
+      "uptime": 0,
+      "usage": {
+        "cpu": 2.725684967089436,
+        "disk": 179716096,
+        "mem": 292298503,
+        "time": "2019-06-07T14:17:05+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.024905
+X-Vcap-Request-Id: 10cc61e9-40d5-44f7-7b08-f71b201c0105::90f76f7c-75d5-437a-801f-695ea2d3dea1
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+Showing health and status for app timetracking in org Central / space development as admin...
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/apps?names=timetracking&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2657
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.009363
+X-Vcap-Request-Id: ff188d82-12e7-448a-4232-64b5a15a4d75::72fbd97a-f99d-4f68-afd0-3f8d31ab18a9
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps?names=timetracking&page=1&per_page=50&space_guids=9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 1
+  },
+  "resources": [
+    {
+      "created_at": "2019-06-07T14:15:47Z",
+      "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+      "lifecycle": {
+        "data": {
+          "buildpacks": [
+            "java_buildpack_offline"
+          ],
+          "stack": "cflinuxfs3"
+        },
+        "type": "buildpack"
+      },
+      "links": {
+        "current_droplet": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current"
+        },
+        "droplets": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets"
+        },
+        "environment_variables": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/environment_variables"
+        },
+        "packages": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/packages"
+        },
+        "processes": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes"
+        },
+        "route_mappings": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/route_mappings"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "start": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/start",
+          "method": "POST"
+        },
+        "stop": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/stop",
+          "method": "POST"
+        },
+        "tasks": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/tasks"
+        }
+      },
+      "name": "timetracking",
+      "relationships": {
+        "space": {
+          "data": {
+            "guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+          }
+        }
+      },
+      "state": "STARTED",
+      "updated_at": "2019-06-07T14:16:42Z"
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2768
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.011289
+X-Vcap-Request-Id: c118d4a6-58b1-4984-67b1-d944b95d4b9b::841815a8-0f27-48a8-9f09-f5d3a47e910c
+X-Xss-Protection: 1; mode=block
+{
+  "pagination": {
+    "first": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes?page=1&per_page=50"
+    },
+    "last": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/processes?page=1&per_page=50"
+    },
+    "next": null,
+    "previous": null,
+    "total_pages": 1,
+    "total_results": 2
+  },
+  "resources": [
+    {
+      "command": "[PRIVATE DATA HIDDEN IN LISTS]",
+      "created_at": "2019-06-07T14:15:47Z",
+      "disk_in_mb": 1024,
+      "guid": "dd4a145d-a651-45e5-8657-ea8e34ebddd5",
+      "health_check": {
+        "data": {
+          "invocation_timeout": null,
+          "timeout": null
+        },
+        "type": "port"
+      },
+      "instances": 1,
+      "links": {
+        "app": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "scale": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/actions/scale",
+          "method": "POST"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "stats": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats"
+        }
+      },
+      "memory_in_mb": 1024,
+      "type": "web",
+      "updated_at": "2019-06-07T14:16:42Z"
+    },
+    {
+      "command": "[PRIVATE DATA HIDDEN IN LISTS]",
+      "created_at": "2019-06-07T14:16:42Z",
+      "disk_in_mb": 1024,
+      "guid": "ace74cb7-8e1e-44cc-b85e-d7650f14635e",
+      "health_check": {
+        "data": {
+          "invocation_timeout": null,
+          "timeout": null
+        },
+        "type": "process"
+      },
+      "instances": 0,
+      "links": {
+        "app": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+        },
+        "scale": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/actions/scale",
+          "method": "POST"
+        },
+        "self": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e"
+        },
+        "space": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+        },
+        "stats": {
+          "href": "https://api.sys.aws.pcfapps.org/v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats"
+        }
+      },
+      "memory_in_mb": 1024,
+      "type": "task",
+      "updated_at": "2019-06-07T14:16:43Z"
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/processes/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 635
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.032279
+X-Vcap-Request-Id: 28b7150a-2bd3-45b5-6172-fdc32977aa87::6db825f9-4318-4a9e-b409-5bb8e645a374
+X-Xss-Protection: 1; mode=block
+{
+  "resources": [
+    {
+      "details": null,
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "10.0.5.8",
+      "index": 0,
+      "instance_ports": [
+        {
+          "external": 61017,
+          "internal": 8080
+        },
+        {
+          "external": 61020,
+          "internal": 2222
+        }
+      ],
+      "isolation_segment": null,
+      "mem_quota": 1073741824,
+      "state": "RUNNING",
+      "type": "web",
+      "uptime": 1,
+      "usage": {
+        "cpu": 2.725684967089436,
+        "disk": 179716096,
+        "mem": 292298503,
+        "time": "2019-06-07T14:17:05+00:00"
+      }
+    }
+  ]
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/processes/ace74cb7-8e1e-44cc-b85e-d7650f14635e/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 25
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.026316
+X-Vcap-Request-Id: 8d8d26e6-4f0f-49f5-601f-66e2b58882b1::02d92627-326b-4407-a4d3-bc4be48f3c9c
+X-Xss-Protection: 1; mode=block
+{
+  "resources": null
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/droplets/current HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2871
+Content-Type: application/json; charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Runtime: 0.008737
+X-Vcap-Request-Id: e9383fdc-cc67-49f6-6944-d240711b005a::faefc4d9-4307-4033-9a5b-1be6d4c11aa0
+X-Xss-Protection: 1; mode=block
+{
+  "buildpacks": [
+    {
+      "buildpack_name": "",
+      "detect_output": "",
+      "name": "java_buildpack_offline",
+      "version": null
+    }
+  ],
+  "checksum": {
+    "type": "sha256",
+    "value": "76e9262b55ed81756c0f75fa1b58dbd76b081380dca6fa690a322bde7bde6ed6"
+  },
+  "created_at": "2019-06-07T14:16:32Z",
+  "error": null,
+  "execution_metadata": "",
+  "guid": "2643826a-1395-4547-bc26-5bcb0a7e82d9",
+  "image": null,
+  "lifecycle": {
+    "data": {},
+    "type": "buildpack"
+  },
+  "links": {
+    "app": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5"
+    },
+    "assign_current_droplet": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/relationships/current_droplet",
+      "method": "PATCH"
+    },
+    "package": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/packages/9a86e9e0-bdd6-4084-8b35-231cbced6517"
+    },
+    "self": {
+      "href": "https://api.sys.aws.pcfapps.org/v3/droplets/2643826a-1395-4547-bc26-5bcb0a7e82d9"
+    }
+  },
+  "process_types": {
+    "task": "JAVA_OPTS=\"-agentpath:$PWD/.java-buildpack/open_jdk_jre/bin/jvmkill-1.16.0_RELEASE=printHeapHistogram=1 -Djava.io.tmpdir=$TMPDIR -XX:ActiveProcessorCount=$(nproc) -Djava.ext.dirs=$PWD/.java-buildpack/container_security_provider:$PWD/.java-buildpack/open_jdk_jre/lib/ext -Djava.security.properties=$PWD/.java-buildpack/java_security/java.security $JAVA_OPTS\" && CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-3.13.0_RELEASE -totMemory=$MEMORY_LIMIT -loadedClasses=19683 -poolType=metaspace -stackThreads=250 -vmOptions=\"$JAVA_OPTS\") && echo JVM Memory Configuration: $CALCULATED_MEMORY && JAVA_OPTS=\"$JAVA_OPTS $CALCULATED_MEMORY\" && MALLOC_ARENA_MAX=2 SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher",
+    "web": "JAVA_OPTS=\"-agentpath:$PWD/.java-buildpack/open_jdk_jre/bin/jvmkill-1.16.0_RELEASE=printHeapHistogram=1 -Djava.io.tmpdir=$TMPDIR -XX:ActiveProcessorCount=$(nproc) -Djava.ext.dirs=$PWD/.java-buildpack/container_security_provider:$PWD/.java-buildpack/open_jdk_jre/lib/ext -Djava.security.properties=$PWD/.java-buildpack/java_security/java.security $JAVA_OPTS\" && CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-3.13.0_RELEASE -totMemory=$MEMORY_LIMIT -loadedClasses=19683 -poolType=metaspace -stackThreads=250 -vmOptions=\"$JAVA_OPTS\") && echo JVM Memory Configuration: $CALCULATED_MEMORY && JAVA_OPTS=\"$JAVA_OPTS $CALCULATED_MEMORY\" && MALLOC_ARENA_MAX=2 SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher"
+  },
+  "stack": "cflinuxfs3",
+  "state": "STAGED",
+  "updated_at": "2019-06-07T14:16:40Z"
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v2/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/routes HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 948
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 4c9c096a-4527-4342-6c84-8ffa5046b25f::80a947dd-c870-4c22-9365-3965c9c2383a
+{
+  "next_url": null,
+  "prev_url": null,
+  "resources": [
+    {
+      "entity": {
+        "apps_url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/apps",
+        "domain_guid": "e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+        "domain_url": "/v2/shared_domains/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+        "host": "timetracking",
+        "path": "",
+        "port": null,
+        "route_mappings_url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b/route_mappings",
+        "service_instance_guid": null,
+        "space_guid": "9dd29be2-25e5-4e0e-9e82-5fadb815a5bc",
+        "space_url": "/v2/spaces/9dd29be2-25e5-4e0e-9e82-5fadb815a5bc"
+      },
+      "metadata": {
+        "created_at": "2019-06-07T14:16:42Z",
+        "guid": "c3bf5f3a-8080-4010-b838-5b131efd670b",
+        "updated_at": "2019-06-07T14:16:42Z",
+        "url": "/v2/routes/c3bf5f3a-8080-4010-b838-5b131efd670b"
+      }
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 1
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v2/shared_domains/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:05-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 369
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:05 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 23ba948b-a5c8-48c8-4189-9f6799217493::3c4961d7-1617-4e5d-a65e-6b79d39e56be
+{
+  "entity": {
+    "internal": false,
+    "name": "cfapps.aws.pcfapps.org",
+    "router_group_guid": null,
+    "router_group_type": null
+  },
+  "metadata": {
+    "created_at": "2019-05-08T16:43:21Z",
+    "guid": "e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce",
+    "updated_at": "2019-06-07T12:40:10Z",
+    "url": "/v2/shared_domains/e3d71087-4934-4e2a-a0d0-19b2f9f9b0ce"
+  }
+}
+
+
+REQUEST: [2019-06-07T09:17:05-05:00]
+GET /v2/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/stats HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:06-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 338
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:06 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: adc00490-58a5-4271-4a81-f1a549ecbc16::944e171d-2ab7-44a8-9f90-003101d8b235
+{
+  "0": {
+    "isolation_segment": null,
+    "state": "RUNNING",
+    "stats": {
+      "disk_quota": 1073741824,
+      "fds_quota": 16384,
+      "host": "10.0.5.8",
+      "mem_quota": 1073741824,
+      "name": "timetracking",
+      "port": 61017,
+      "uptime": 1,
+      "uris": [
+        "timetracking.cfapps.aws.pcfapps.org"
+      ],
+      "usage": {
+        "cpu": 2.725684967089436,
+        "disk": 179716096,
+        "mem": 292298503,
+        "time": "2019-06-07T14:17:06+00:00"
+      }
+    }
+  }
+}
+
+
+REQUEST: [2019-06-07T09:17:06-05:00]
+GET /v2/apps/dd4a145d-a651-45e5-8657-ea8e34ebddd5/instances HTTP/1.1
+Host: api.sys.aws.pcfapps.org
+Accept: application/json
+Authorization: [PRIVATE DATA HIDDEN]
+User-Agent: cf/6.45.0+5f9ff16f9.2019-06-03 (go1.12.1; amd64 darwin)
+
+RESPONSE: [2019-06-07T09:17:06-05:00]
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 55
+Content-Type: application/json;charset=utf-8
+Date: Fri, 07 Jun 2019 14:17:06 GMT
+Server: nginx
+X-Content-Type-Options: nosniff
+X-Vcap-Request-Id: 1dd153f4-9cd8-419f-478b-d9dd507e2791::c9e84030-2233-452a-824d-c84f854102c6
+{
+  "0": {
+    "since": 1559917024,
+    "state": "RUNNING",
+    "uptime": 1
+  }
+}
+
+
+name:              timetracking
+requested state:   started
+routes:            timetracking.cfapps.aws.pcfapps.org
+last uploaded:     Fri 07 Jun 09:16:32 CDT 2019
+stack:             cflinuxfs3
+buildpacks:        java_buildpack_offline
+
+type:           web
+instances:      1/1
+memory usage:   1024M
+     state     since                    cpu      memory         disk
+#0   running   2019-06-07 09:17:05 AM   272.6%   278.8M of 1G   171.4M of 1G
+
+type:           task
+instances:      0/0
+memory usage:   1024M

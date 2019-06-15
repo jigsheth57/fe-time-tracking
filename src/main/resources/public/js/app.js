@@ -2,13 +2,13 @@ var timeEntryApp = angular.module('timeEntryApp', ['ngRoute', 'swxSessionStorage
 
 timeEntryApp.config(['$routeProvider', 
     function($routeProvider) {
-		$routeProvider.when('/entries', {
+		$routeProvider.when('/timeentries', {
 			templateUrl: '/partials/entryList.html',
 			controller: 'EntryListController'
-		}).when('/entries/:entryId', {
+		}).when('/timeentries/:entryId', {
 			templateUrl: '/partials/editEntry.html',
 			controller: 'EditEntryController'
 		}).otherwise({
-			redirectTo: '/entries'
+			redirectTo: '/timeentries'
 		})
 }])
