@@ -4,7 +4,7 @@
             <div class="col-md-10">
                 <!-- <h3><img alt="logo" src="../images/cdw_logo.png" width="30px" height="28px"> Time Tracking</h3> -->
                 <h3>Time Tracking</h3>
-                <hr/>
+                <hr />
             </div>
         </div>
         <div class="row" ng-show="message">
@@ -30,7 +30,7 @@
                         </tr>
                     </thead>
                     <!--					<tbody style="background-color:lightyellow;"> -->
-                    <tbody style="background-color:rgb(118, 205, 245);">
+                    <tbody style="background-color:rgb(176, 255, 29);">
                         <!-- Display each entry in a row -->
                         <tr ng-repeat="entry in entries">
                             <td>{{entry.feName}}</td>
@@ -39,7 +39,8 @@
                             <td>{{entry.hours}}</td>
                             <td>
                                 <a href="#/timeentries/{{entry.timeEntryId}}" class="btn btn-primary btn-sm">Edit</a>
-                                <input type="button" ng-click="delete(entry.timeEntryId)" class="btn btn-danger btn-sm" value="Delete" />
+                                <input type="button" ng-click="delete(entry.timeEntryId)" class="btn btn-danger btn-sm"
+                                    value="Delete" />
                             </td>
                         </tr>
                     </tbody>
