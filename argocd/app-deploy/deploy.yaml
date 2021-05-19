@@ -6,4 +6,4 @@ spec:
   template:
     spec:
       containers:
-      - image: kind-registry:5000/fetimetracking:v1.1
+      - image: kind-registry:5000/fetimetracking:v1.2

@@ -10,6 +10,6 @@ spec:
   serviceAccount: default
   source:
     git:
-      revision: v1.1 
+      revision: v1.2
       url: https://github.com/jigsheth57/fe-time-tracking
-  tag: kind-registry:5000/fetimetracking:v1.1
+  tag: kind-registry:5000/fetimetracking:v1.2
